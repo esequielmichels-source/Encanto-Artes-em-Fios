@@ -167,7 +167,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 1rem;
       height: 80px;
+    }
+
+    @media (min-width: 1024px) {
+      .nav-container {
+        gap: 2rem;
+      }
     }
 
     .brand-logo {
@@ -177,6 +184,7 @@
       color: var(--text-main);
       font-weight: 600;
       position: relative;
+      flex-shrink: 0;
     }
 
     /* Container da Logo Oficial com Marca-d'água suave integrada */
@@ -238,23 +246,37 @@
     .nav-links {
       display: none;
       align-items: center;
-      gap: 2rem;
+      gap: 0.85rem;
       list-style: none;
     }
 
-    @media (min-width: 920px) {
+    @media (min-width: 1100px) {
       .nav-links {
         display: flex;
+        gap: 1.15rem;
+      }
+    }
+
+    @media (min-width: 1240px) {
+      .nav-links {
+        gap: 1.5rem;
       }
     }
 
     .nav-link {
-      font-size: 0.9375rem;
+      font-size: 0.875rem;
       font-weight: 500;
       color: var(--text-muted);
       transition: color 0.2s ease;
       position: relative;
-      padding: 0.25rem 0;
+      padding: 0.25rem 0.5rem;
+      white-space: nowrap;
+    }
+
+    @media (min-width: 1240px) {
+      .nav-link {
+        font-size: 0.9375rem;
+      }
     }
 
     .nav-link:hover,
@@ -331,7 +353,7 @@
       color: var(--text-main);
     }
 
-    @media (min-width: 920px) {
+    @media (min-width: 1100px) {
       .hamburger-btn {
         display: none;
       }
@@ -717,6 +739,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
     }
 
     .product-image {
@@ -728,6 +751,96 @@
 
     .product-card:hover .product-image {
       transform: scale(1.05);
+    }
+
+    /* ==========================================================================
+       MODAL / LIGHTBOX DE VISUALIZAÇÃO AMPLIADA DA FOTO DO PRODUTO
+       ========================================================================== */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 9999;
+      background-color: rgba(20, 16, 14, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-content-wrap {
+      position: relative;
+      max-width: 90vw;
+      max-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-img {
+      max-width: 88vw;
+      max-height: 84vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: var(--radius-md);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+      user-select: none;
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      border: none;
+      z-index: 10001;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .lightbox-close-btn:hover {
+      transform: scale(1.08);
+      background-color: var(--bg-canvas);
+    }
+
+    .lightbox-close-btn svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    @media (max-width: 600px) {
+      .lightbox-modal {
+        padding: 1rem;
+      }
+      .lightbox-close-btn {
+        top: 14px;
+        right: 14px;
+        position: fixed;
+      }
+      .lightbox-img {
+        max-width: 94vw;
+        max-height: 80vh;
+      }
     }
 
     .product-badge-handmade {
@@ -1470,6 +1583,280 @@
       }
     }
 
+    /* ==========================================================================
+       SEÇÃO GUIA DE PREÇOS (CONTEÚDO ESTÁTICO)
+       ========================================================================== */
+    .guia-section {
+      padding: 5.5rem 0;
+      background-color: var(--bg-canvas);
+      border-top: 1px solid var(--sand-border);
+      position: relative;
+    }
+
+    .guia-header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .guia-title {
+      font-family: var(--font-display);
+      font-size: 2.35rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--text-main);
+      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .guia-title {
+        font-size: 3rem;
+      }
+    }
+
+    .guia-subtitle {
+      font-size: 1.0625rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .guia-content-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.25rem;
+    }
+
+    .guia-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--sand-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    @media (min-width: 600px) {
+      .guia-card {
+        padding: 2.25rem;
+      }
+    }
+
+    .guia-card-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.85rem;
+      line-height: 1.3;
+    }
+
+    .guia-card-text {
+      font-size: 1rem;
+      color: var(--text-main);
+      line-height: 1.65;
+    }
+
+    .guia-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    .guia-list-item {
+      font-size: 1rem;
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .guia-list-item::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--earth-accent);
+      font-weight: bold;
+    }
+
+    .guia-list-title {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .guia-disclaimer {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+
+    .guia-example-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-bottom: 1rem;
+    }
+
+    .guia-example-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px dashed var(--sand-border);
+      font-size: 1rem;
+    }
+
+    .guia-example-label {
+      color: var(--text-main);
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .guia-example-value {
+      color: var(--text-main);
+      font-weight: 600;
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .guia-example-row-total {
+      border-top: 1px solid var(--sand-border);
+      border-bottom: 1px solid var(--sand-border);
+      padding: 0.85rem 0.75rem;
+      background-color: var(--bg-warm-box);
+      border-radius: var(--radius-md);
+      margin: 0.35rem 0;
+    }
+
+    .guia-example-row-total .guia-example-label,
+    .guia-example-row-total .guia-example-value {
+      font-weight: 700;
+      color: var(--earth-accent);
+    }
+
+    .guia-example-row-price {
+      border-top: 2px solid var(--rose-primary);
+      border-bottom: none;
+      padding-top: 1rem;
+      padding-bottom: 0.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .guia-example-row-price .guia-example-label {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .guia-example-row-price .guia-example-value {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--rose-dark);
+    }
+
+    .guia-example-note {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-top: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .guia-cta-inline {
+      padding: 1.25rem;
+      background-color: var(--bg-warm-box);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--sand-border);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .guia-cta-inline-text {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .guia-btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      background-color: #25D366;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.75rem 1.65rem;
+      min-height: 44px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.28);
+      transition: var(--transition-smooth);
+      text-decoration: none;
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+
+    .guia-btn-whatsapp:hover {
+      background-color: #1EB957;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.38);
+    }
+
+    .guia-btn-whatsapp svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .guia-card-final {
+      background-color: var(--bg-warm-box);
+      border: 1px solid var(--sand-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.15rem;
+    }
+
+    @media (min-width: 600px) {
+      .guia-card-final {
+        padding: 2.75rem 2.5rem;
+      }
+    }
+
+    .guia-card-final-title {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+
+    .guia-card-final-text {
+      font-size: 1.0625rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 600px;
+    }
+
+    .guia-card-final-note {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
     a:focus-visible, button:focus-visible {
       outline: 2px solid var(--rose-primary);
       outline-offset: 3px;
@@ -1481,11 +1868,12 @@
   <!-- ==========================================================================
        CABEÇALHO COM LOGO OFICIAL
        ========================================================================== -->
-  <header class="site-header" id="topo">
+  <header class="site-header" id="top">
+    <div id="topo"></div>
     <div class="container nav-container">
       
       <!-- Marca / Logo Oficial da Encanto Artes em Fios -->
-      <a href="#topo" class="brand-logo" aria-label="Encanto Artes em Fios - Início">
+      <a href="#top" class="brand-logo shrink-0" aria-label="Encanto Artes em Fios - Início">
         <div class="brand-logo-container">
           <img src="imagens/marca-dagua.png" 
                alt="" 
@@ -1502,11 +1890,12 @@
 
       <nav aria-label="Menu principal">
         <ul class="nav-links">
-          <li><a href="#topo" class="nav-link">Início</a></li>
+          <li><a href="#top" class="nav-link">Início</a></li>
           <li><a href="#destaques" class="nav-link">Destaques</a></li>
           <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
           <li><a href="#encomendas" class="nav-link">Encomendas</a></li>
           <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#guia-precificacao" class="nav-link">Para Criadores &amp; Artesãos</a></li>
           <li><a href="#contato" class="nav-link">Contato</a></li>
         </ul>
       </nav>
@@ -1534,11 +1923,12 @@
 
     <div class="mobile-menu" id="menuMobile">
       <ul class="mobile-nav-list">
-        <li><a href="#topo" class="mobile-nav-link" onclick="fecharMenuMobile()">Início</a></li>
+        <li><a href="#top" class="mobile-nav-link" onclick="fecharMenuMobile()">Início</a></li>
         <li><a href="#destaques" class="mobile-nav-link" onclick="fecharMenuMobile()">Destaques</a></li>
         <li><a href="#como-funciona" class="mobile-nav-link" onclick="fecharMenuMobile()">Como Funciona</a></li>
         <li><a href="#encomendas" class="mobile-nav-link" onclick="fecharMenuMobile()">Encomendas</a></li>
         <li><a href="#sobre" class="mobile-nav-link" onclick="fecharMenuMobile()">Sobre</a></li>
+        <li><a href="#guia-precificacao" class="mobile-nav-link" onclick="fecharMenuMobile()">Para Criadores &amp; Artesãos</a></li>
         <li><a href="#contato" class="mobile-nav-link" onclick="fecharMenuMobile()">Contato</a></li>
       </ul>
     </div>
@@ -1846,6 +2236,148 @@
     </section>
 
     <!-- ==========================================================================
+         GUIA DE PREÇOS (CONTEÚDO ESTÁTICO)
+         ========================================================================== -->
+    <section class="guia-section" id="guia-precificacao">
+      <div class="container">
+        
+        <div class="guia-header">
+          <span class="section-tag">Guia rápido</span>
+          <h2 class="guia-title">Como precificar seu artesanato</h2>
+          <p class="guia-subtitle">Do custo ao preço final, em poucos minutos.</p>
+        </div>
+
+        <div class="guia-content-wrapper">
+          
+          <!-- Bloco "Por que precificar direito" -->
+          <div class="guia-card">
+            <h3 class="guia-card-title">Por que precificar direito</h3>
+            <p class="guia-card-text">
+              Muita gente vende pelo preço que vê no concorrente ou pelo que &quot;parece justo&quot;. O resultado é trabalhar muito e sobrar pouco. Um bom preço cobre todos os custos da peça, paga o seu trabalho e ainda deixa lucro.
+            </p>
+          </div>
+
+          <!-- Bloco "Os 5 custos de uma peça" -->
+          <div class="guia-card">
+            <h3 class="guia-card-title">Os 5 custos de uma peça</h3>
+            <ul class="guia-list">
+              <li class="guia-list-item">
+                <span class="guia-list-title">Materiais:</span> tudo o que entra na peça, incluindo o que sobra e o que se perde.
+              </li>
+              <li class="guia-list-item">
+                <span class="guia-list-title">Mão de obra:</span> horas trabalhadas × o valor da sua hora. Sim, você precisa se pagar.
+              </li>
+              <li class="guia-list-item">
+                <span class="guia-list-title">Custos indiretos:</span> embalagem, energia, ferramentas, internet. Use uma porcentagem sobre materiais + mão de obra (no exemplo, 10%).
+              </li>
+              <li class="guia-list-item">
+                <span class="guia-list-title">Marketing:</span> o gasto do mês com campanhas ÷ o número de peças vendidas no mês.
+              </li>
+              <li class="guia-list-item">
+                <span class="guia-list-title">Taxas da plataforma:</span> comissões do marketplace e do meio de pagamento. Confira os valores atuais, porque mudam.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Bloco "Exemplo: bolsa de crochê" -->
+          <div class="guia-card">
+            <h3 class="guia-card-title">Exemplo: bolsa de crochê</h3>
+            <p class="guia-disclaimer">Números ilustrativos. Use os seus.</p>
+
+            <div class="guia-example-box">
+              <div class="guia-example-row">
+                <span class="guia-example-label">Materiais (fios, forro, zíper)</span>
+                <span class="guia-example-value">R$ 30,00</span>
+              </div>
+              <div class="guia-example-row">
+                <span class="guia-example-label">Mão de obra (5 h × R$ 15 por hora)</span>
+                <span class="guia-example-value">R$ 75,00</span>
+              </div>
+              <div class="guia-example-row">
+                <span class="guia-example-label">Custos indiretos (10% sobre materiais + mão de obra)</span>
+                <span class="guia-example-value">R$ 10,50</span>
+              </div>
+              <div class="guia-example-row">
+                <span class="guia-example-label">Marketing (campanha de R$ 100 ÷ 20 peças)</span>
+                <span class="guia-example-value">R$ 5,00</span>
+              </div>
+              <div class="guia-example-row guia-example-row-total">
+                <span class="guia-example-label">Custo total</span>
+                <span class="guia-example-value">R$ 120,50</span>
+              </div>
+              <div class="guia-example-row">
+                <span class="guia-example-label">Margem de lucro (30% sobre o custo)</span>
+                <span class="guia-example-value">R$ 36,15</span>
+              </div>
+              <div class="guia-example-row guia-example-row-price">
+                <span class="guia-example-label">Preço sugerido</span>
+                <span class="guia-example-value">R$ 156,65</span>
+              </div>
+            </div>
+
+            <p class="guia-example-note">
+              Neste exemplo as taxas da plataforma não foram incluídas. Some as suas ao custo antes de definir a margem.
+            </p>
+
+            <div class="guia-cta-inline">
+              <p class="guia-cta-inline-text">Quer que o app faça essa conta para você?</p>
+              <a href="https://wa.me/5547997171688?text=Ol%C3%A1!%20Quero%20testar%20o%20app%20de%20precifica%C3%A7%C3%A3o%20da%20Encanto%20Artes%20em%20Fios.%20Meu%20e-mail%20do%20Google%20(o%20mesmo%20que%20vou%20usar%20para%20entrar)%20%C3%A9%3A%20" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="guia-btn-whatsapp"
+                 aria-label="Pedir acesso pelo WhatsApp (abre em nova aba)">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
+                </svg>
+                <span>Pedir acesso pelo WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bloco "Margem de lucro" -->
+          <div class="guia-card">
+            <h3 class="guia-card-title">Margem de lucro</h3>
+            <p class="guia-card-text">
+              Margem é o que sobra depois de pagar todos os custos. No exemplo, 30% sobre o custo. Ela não é desconto nem &quot;enfeite&quot;: é o que faz o seu negócio crescer e pagar imprevistos.
+            </p>
+          </div>
+
+          <!-- Bloco "Erros comuns" -->
+          <div class="guia-card">
+            <h3 class="guia-card-title">Erros comuns</h3>
+            <ul class="guia-list">
+              <li class="guia-list-item">Não contar o próprio tempo.</li>
+              <li class="guia-list-item">Esquecer embalagem, frete de material e perdas.</li>
+              <li class="guia-list-item">Ignorar marketing e taxas da plataforma.</li>
+              <li class="guia-list-item">Copiar o preço do concorrente sem saber o custo dele.</li>
+            </ul>
+          </div>
+
+          <!-- Bloco final (destaque com fundo --bg-warm-box) -->
+          <div class="guia-card-final">
+            <h3 class="guia-card-final-title">Chega de fazer conta na mão?</h3>
+            <p class="guia-card-final-text">
+              O app da Encanto Artes em Fios guarda seus materiais e produtos e calcula o preço de cada peça. Peça seu acesso de teste grátis (7 dias) pelo WhatsApp e liberamos para você.
+            </p>
+            <a href="https://wa.me/5547997171688?text=Ol%C3%A1!%20Quero%20testar%20o%20app%20de%20precifica%C3%A7%C3%A3o%20da%20Encanto%20Artes%20em%20Fios.%20Meu%20e-mail%20do%20Google%20(o%20mesmo%20que%20vou%20usar%20para%20entrar)%20%C3%A9%3A%20" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="guia-btn-whatsapp"
+               aria-label="Pedir acesso pelo WhatsApp (abre em nova aba)">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
+              </svg>
+              <span>Pedir acesso pelo WhatsApp</span>
+            </a>
+            <p class="guia-card-final-note">O acesso é liberado manualmente, pelo e-mail do Google que você informar.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
          CHAMADA FINAL (SHOPEE + WHATSAPP)
          ========================================================================== -->
     <section class="cta-banner-section" id="contato">
@@ -1915,7 +2447,7 @@
         <div>
           <h4 class="footer-heading">Navegação</h4>
           <ul class="footer-links">
-            <li><a href="#topo" class="footer-link">Início</a></li>
+            <li><a href="#top" class="footer-link">Início</a></li>
             <li><a href="#destaques" class="footer-link">Destaques</a></li>
             <li><a href="#como-funciona" class="footer-link">Como Funciona</a></li>
             <li><a href="#encomendas" class="footer-link">Encomendas</a></li>
@@ -1967,6 +2499,21 @@
     </svg>
     <span class="whatsapp-floating-text">Fale no WhatsApp</span>
   </a>
+
+  <!-- ==========================================================================
+       MODAL / LIGHTBOX DE VISUALIZAÇÃO AMPLIADA DA FOTO DO PRODUTO
+       ========================================================================== -->
+  <div class="lightbox-modal" id="modalFotoProduto" role="dialog" aria-modal="true" aria-label="Visualização ampliada do produto">
+    <div class="lightbox-content-wrap" id="lightboxContentWrap">
+      <button type="button" class="lightbox-close-btn" id="btnFecharLightbox" aria-label="Fechar visualização ampliada (ESC)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <img src="" alt="" class="lightbox-img" id="imgModalAmpliada">
+    </div>
+  </div>
 
   <!-- ==========================================================================
        JAVASCRIPT — CONFIGURAÇÃO CENTRAL & RENDERIZAÇÃO AUTOMÁTICA
@@ -2137,7 +2684,7 @@
         card.className = 'product-card';
 
         card.innerHTML = `
-          <div class="product-media-wrapper" id="media-${index}">
+          <div class="product-media-wrapper" id="media-${index}" onclick="abrirModalImagem('${produto.imagem}', '${produto.nome.replace(/'/g, "\\'")}')" title="Clique para ver a foto ampliada">
             <span class="product-badge-handmade">Feito à mão</span>
             <img src="${produto.imagem}" 
                  alt="${produto.nome} - Feito à mão pela Encanto Artes em Fios" 
@@ -2290,15 +2837,71 @@
       }
     }
 
+    // ============================================================
+    // MODAL / LIGHTBOX DE VISUALIZAÇÃO AMPLIADA DA FOTO DO PRODUTO
+    // ============================================================
+    function abrirModalImagem(src, alt) {
+      const modal = document.getElementById('modalFotoProduto');
+      const img = document.getElementById('imgModalAmpliada');
+      if (!modal || !img) return;
+
+      img.src = src;
+      img.alt = alt || 'Visualização ampliada do produto';
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function fecharModalImagem() {
+      const modal = document.getElementById('modalFotoProduto');
+      const img = document.getElementById('imgModalAmpliada');
+      if (!modal) return;
+
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      if (img) {
+        img.src = '';
+      }
+    }
+
+    function inicializarEventosModal() {
+      const modal = document.getElementById('modalFotoProduto');
+      const btnFechar = document.getElementById('btnFecharLightbox');
+
+      if (btnFechar) {
+        btnFechar.addEventListener('click', (e) => {
+          e.stopPropagation();
+          fecharModalImagem();
+        });
+      }
+
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          // Fecha ao clicar fora da imagem (no fundo escuro/overlay)
+          if (e.target === modal) {
+            fecharModalImagem();
+          }
+        });
+      }
+
+      // Fecha ao pressionar ESC no teclado
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' || e.key === 'Esc') {
+          fecharModalImagem();
+        }
+      });
+    }
+
     // Inicialização segura
     document.addEventListener('DOMContentLoaded', () => {
       renderizarProdutos();
       aplicarConfiguracoesGlobais();
+      inicializarEventosModal();
     });
 
     if (document.readyState === 'interactive' || document.readyState === 'complete') {
       renderizarProdutos();
       aplicarConfiguracoesGlobais();
+      inicializarEventosModal();
     }
   </script>
 

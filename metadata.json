@@ -2,5 +2,7 @@
   "name": "Encanto Artes em Fios - Vitrine Premium de Artesanato",
   "description": "Vitrine artesanal elegante e exclusiva para a marca Encanto Artes em Fios, com apresentação de produtos, compra direta na Shopee e encomendas personalizadas via WhatsApp.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
