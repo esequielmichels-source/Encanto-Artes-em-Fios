@@ -309,6 +309,16 @@
       height: 16px;
     }
 
+    @media (max-width: 480px) {
+      .btn-shopee-header {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 1.15rem;
+      }
+    }
+
     .hamburger-btn {
       display: flex;
       flex-direction: column;
@@ -830,6 +840,7 @@
       font-weight: 700;
       color: var(--shopee-orange);
       font-variant-numeric: tabular-nums;
+      white-space: nowrap;
     }
 
     .btn-buy-shopee {
@@ -857,6 +868,28 @@
     .btn-buy-shopee svg {
       width: 15px;
       height: 15px;
+    }
+
+    @media (max-width: 480px) {
+      .product-bottom-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.85rem;
+      }
+
+      .product-price-box {
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+
+      .product-price {
+        white-space: nowrap;
+      }
+
+      .btn-buy-shopee {
+        width: 100%;
+      }
     }
 
     .btn-card-whatsapp-duvida {
