@@ -1,0 +1,2273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encanto Artes em Fios | Vitrine Premium de Artesanato</title>
+  <meta name="description" content="Conheça a Encanto Artes em Fios: peças artesanais exclusivas feitas à mão com carinho, delicadeza e matérias-primas selecionadas. Compre pela Shopee ou encomende sob medida via WhatsApp.">
+  <meta property="og:title" content="Encanto Artes em Fios | Vitrine Premium de Artesanato">
+  <meta property="og:description" content="Peças artesanais exclusivas feitas à mão para transformar e acolher o seu lar. Compre com segurança na Shopee ou fale conosco pelo WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="imagens/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Tipografia Refinada: Cormorant Garamond e Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       PALETA DE CORES & VARIÁVEIS VISUAIS - ENCANTO ARTES EM FIOS
+       Estética de catálogo artesanal premium:
+       Areia, bege, linho, salmão suave, rosé antigo, terracota sutil e grafite.
+       ========================================================================== */
+    :root {
+      --bg-canvas: #FAF7F2;          /* Fundo quente linho / off-white natural */
+      --bg-surface: #FFFFFF;         /* Fundo limpo para cards */
+      --bg-subtle: #F3ECE4;          /* Bege suave e aconchegante */
+      --bg-warm-box: #F6EFE8;        /* Tom areia aconchegante */
+      
+      --rose-soft: #F5EAE6;          /* Rosé suave / salmão muito claro */
+      --rose-primary: #D4A396;       /* Salmão envelhecido / rosé artesanal */
+      --rose-dark: #B97C6E;          /* Terracota elegante */
+      --earth-accent: #8E5D52;       /* Tom terroso nobre */
+
+      --sand-border: #EFE7DE;        /* Linhas sutis e divisórias */
+      --sand-dark: #D8CCC0;
+      
+      --text-main: #2D2724;          /* Grafite escuro para máxima legibilidade */
+      --text-muted: #6B625C;         /* Texto secundário */
+      --text-light: #948A83;         /* Informações de apoio e legendas */
+
+      --shopee-orange: #EE4D2D;      /* Cor oficial da Shopee */
+      --shopee-hover: #D73211;
+      --whatsapp-green: #25D366;     /* Verde oficial do WhatsApp */
+      --whatsapp-hover: #1EB957;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-pill: 9999px;
+
+      --shadow-sm: 0 2px 10px rgba(45, 39, 36, 0.04);
+      --shadow-card: 0 6px 24px rgba(45, 39, 36, 0.06);
+      --shadow-hover: 0 14px 36px rgba(45, 39, 36, 0.11);
+      --shadow-floating: 0 10px 28px rgba(37, 211, 102, 0.32);
+
+      --transition-smooth: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      color: var(--text-main);
+      background-color: var(--bg-canvas);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      background-color: var(--bg-canvas);
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Tipografia de Seções */
+    .section-tag {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--earth-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+      text-wrap: balance;
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 3.35rem;
+      }
+    }
+
+    .section-subtitle {
+      font-size: 1.0625rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       CABEÇALHO / HEADER & LOGO OFICIAL
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--sand-border);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      color: var(--text-main);
+      font-weight: 600;
+      position: relative;
+    }
+
+    /* Container da Logo Oficial com Marca-d'água suave integrada */
+    .brand-logo-container {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      flex-shrink: 0;
+    }
+
+    /* Elemento decorativo: marca-d'água floral ("E" com flores) ampliada e com baixa opacidade */
+    .brand-logo-watermark {
+      position: absolute;
+      width: 72px;
+      height: 72px;
+      opacity: 0.14;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+      mix-blend-mode: multiply;
+      transform: scale(1.15) rotate(-4deg);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    }
+
+    .brand-logo:hover .brand-logo-watermark {
+      opacity: 0.28;
+      transform: scale(1.25) rotate(2deg);
+    }
+
+    /* Logo Oficial com transparência natural e proporção original preservada */
+    .brand-logo-img {
+      position: relative;
+      z-index: 1;
+      height: 48px;
+      width: auto;
+      max-width: 48px;
+      object-fit: contain;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 2px 5px rgba(45, 39, 36, 0.06));
+    }
+
+    .brand-logo:hover .brand-logo-img {
+      transform: scale(1.04);
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.625rem;
+      letter-spacing: -0.01em;
+      font-weight: 700;
+      color: var(--text-main);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    @media (min-width: 920px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      color: var(--text-main);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background-color: var(--rose-primary);
+      transition: width 0.2s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn-shopee-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--shopee-orange);
+      color: #ffffff;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 2px 10px rgba(238, 77, 45, 0.22);
+      transition: var(--transition-smooth);
+      white-space: nowrap;
+    }
+
+    .btn-shopee-header:hover {
+      background-color: var(--shopee-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(238, 77, 45, 0.35);
+    }
+
+    .btn-shopee-header svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .hamburger-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+    }
+
+    @media (min-width: 920px) {
+      .hamburger-btn {
+        display: none;
+      }
+    }
+
+    .hamburger-btn span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: var(--text-main);
+      transition: var(--transition-smooth);
+    }
+
+    .hamburger-btn.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger-btn.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--sand-border);
+      padding: 1.5rem;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .mobile-nav-link {
+      font-size: 1.0625rem;
+      font-weight: 500;
+      color: var(--text-main);
+      display: block;
+    }
+
+    /* ==========================================================================
+       HERO / PRIMEIRA SEÇÃO & MARCA-D'ÁGUA DECORATIVA
+       ========================================================================== */
+    .hero-section {
+      padding: 3.5rem 0 4.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (min-width: 992px) {
+      .hero-section {
+        padding: 5.5rem 0 6.5rem;
+      }
+    }
+
+    /* Marca-d'água elegante com o "E" floral em baixa opacidade */
+    .hero-brand-watermark {
+      position: absolute;
+      top: 0;
+      left: -40px;
+      width: 480px;
+      height: 480px;
+      opacity: 0.04;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+      mix-blend-mode: multiply;
+      transform: rotate(-8deg);
+    }
+
+    .hero-brand-watermark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (min-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.95fr;
+        gap: 4.5rem;
+      }
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero-badge-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--earth-accent);
+      background-color: var(--rose-soft);
+      padding: 0.4rem 0.95rem;
+      border-radius: var(--radius-pill);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge-note svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 3.25rem;
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--text-main);
+      margin-bottom: 1.35rem;
+      text-wrap: balance;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 4.25rem;
+      }
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--rose-dark);
+      font-weight: 500;
+    }
+
+    .hero-lead {
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+    }
+
+    @media (min-width: 520px) {
+      .hero-buttons {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .btn-hero-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background-color: var(--text-main);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      padding: 0.95rem 1.85rem;
+      border-radius: var(--radius-pill);
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 14px rgba(45, 39, 36, 0.16);
+      text-align: center;
+    }
+
+    .btn-hero-primary:hover {
+      background-color: #433B37;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(45, 39, 36, 0.24);
+    }
+
+    .btn-hero-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background-color: #ffffff;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      padding: 0.95rem 1.85rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--sand-dark);
+      transition: var(--transition-smooth);
+      text-align: center;
+    }
+
+    .btn-hero-secondary:hover {
+      background-color: var(--bg-subtle);
+      border-color: var(--rose-primary);
+      color: var(--rose-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-hero-secondary svg {
+      color: var(--whatsapp-green);
+    }
+
+    .hero-image-container {
+      position: relative;
+    }
+
+    .hero-image-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--sand-border);
+      background-color: var(--bg-subtle);
+      aspect-ratio: 4 / 3;
+    }
+
+    .hero-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-image-frame:hover img {
+      transform: scale(1.03);
+    }
+
+    .hero-floating-seal {
+      position: absolute;
+      bottom: -15px;
+      left: 20px;
+      background: var(--bg-surface);
+      border: 1px solid var(--sand-border);
+      border-radius: var(--radius-md);
+      padding: 0.8rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      box-shadow: 0 8px 26px rgba(45, 39, 36, 0.08);
+    }
+
+    .seal-icon-box {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--rose-soft);
+      color: var(--earth-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .seal-text-title {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+
+    .seal-text-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       FAIXA DE CONFIANÇA & ATRIBUTOS ARTESANAIS
+       ========================================================================== */
+    .trust-strip {
+      padding: 1.85rem 0;
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--sand-border);
+      border-bottom: 1px solid var(--sand-border);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .trust-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .trust-icon {
+      color: var(--rose-dark);
+      flex-shrink: 0;
+    }
+
+    .trust-text-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+
+    .trust-text-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       SEÇÃO DE PRODUTOS — CATÁLOGO PREMIUM ESTILO ARTESANAL
+       ========================================================================== */
+    .products-section {
+      padding: 5.5rem 0;
+      position: relative;
+    }
+
+    .section-header {
+      margin-bottom: 3.75rem;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.25rem;
+    }
+
+    @media (min-width: 700px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1040px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Card de Produto Premium */
+    .product-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--sand-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--sand-dark);
+    }
+
+    .product-media-wrapper {
+      position: relative;
+      background-color: var(--bg-subtle);
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(1.05);
+    }
+
+    .product-badge-handmade {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--earth-accent);
+      padding: 0.35rem 0.8rem;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .product-image-fallback {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #FAF4EF 0%, #EFE8DE 100%);
+      color: var(--text-muted);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .product-image-fallback svg {
+      width: 44px;
+      height: 44px;
+      color: var(--rose-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-image-fallback .fallback-title {
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .product-image-fallback .fallback-subtitle {
+      font-size: 0.75rem;
+      color: var(--earth-accent);
+      line-height: 1.35;
+    }
+
+    .product-info {
+      padding: 1.85rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-title {
+      font-family: var(--font-display);
+      font-size: 1.6875rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+
+    .product-desc {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+
+    .product-spec-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.8125rem;
+      color: var(--text-light);
+      margin-bottom: 1.35rem;
+    }
+
+    .product-bottom-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: auto;
+      padding-top: 1.35rem;
+      border-top: 1px solid var(--sand-border);
+    }
+
+    .product-price-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-price-label {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+    }
+
+    .product-price {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--shopee-orange);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .btn-buy-shopee {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: var(--shopee-orange);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 0.75rem 1.35rem;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 3px 12px rgba(238, 77, 45, 0.22);
+      transition: var(--transition-smooth);
+      white-space: nowrap;
+    }
+
+    .btn-buy-shopee:hover {
+      background-color: var(--shopee-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(238, 77, 45, 0.35);
+    }
+
+    .btn-buy-shopee svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .btn-card-whatsapp-duvida {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 0.85rem;
+      padding: 0.4rem 0;
+      border-radius: var(--radius-pill);
+      transition: all 0.2s ease;
+      background-color: var(--bg-subtle);
+    }
+
+    .btn-card-whatsapp-duvida:hover {
+      color: #ffffff;
+      background-color: var(--whatsapp-green);
+    }
+
+    .btn-card-whatsapp-duvida svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    /* ==========================================================================
+       SEÇÃO: COMO FUNCIONA
+       ========================================================================== */
+    .how-it-works-section {
+      padding: 5rem 0;
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--sand-border);
+      border-bottom: 1px solid var(--sand-border);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .step-card {
+      background-color: var(--bg-canvas);
+      border: 1px solid var(--sand-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 1.75rem;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    .step-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--rose-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--rose-primary);
+      line-height: 1;
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+    }
+
+    .step-desc {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       SEÇÃO DE ENCOMENDAS PERSONALIZADAS
+       ========================================================================== */
+    .custom-orders-section {
+      padding: 5.5rem 0;
+      position: relative;
+    }
+
+    .custom-box {
+      background: linear-gradient(135deg, #FAF4EF 0%, #F5ECE4 100%);
+      border: 1px solid var(--sand-dark);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    @media (min-width: 768px) {
+      .custom-box {
+        padding: 4.5rem 3.5rem;
+      }
+    }
+
+    .custom-title {
+      font-family: var(--font-display);
+      font-size: 2.375rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+      text-wrap: balance;
+    }
+
+    @media (min-width: 768px) {
+      .custom-title {
+        font-size: 3rem;
+      }
+    }
+
+    .custom-desc {
+      font-size: 1.0625rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .btn-custom-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background-color: var(--whatsapp-green);
+      color: #ffffff;
+      font-size: 1.0625rem;
+      font-weight: 600;
+      padding: 1.125rem 2.25rem;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-custom-whatsapp:hover {
+      background-color: var(--whatsapp-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+    }
+
+    .btn-custom-whatsapp svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .custom-tags-container {
+      margin-top: 2.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.65rem;
+    }
+
+    .custom-chip {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid var(--sand-border);
+      padding: 0.45rem 0.95rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      transition: var(--transition-smooth);
+      cursor: pointer;
+    }
+
+    .custom-chip:hover {
+      background: #ffffff;
+      color: var(--text-main);
+      border-color: var(--rose-primary);
+    }
+
+    /* ==========================================================================
+       SEÇÃO: SOBRE A MARCA
+       ========================================================================== */
+    .about-section {
+      padding: 5.5rem 0;
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--sand-border);
+      border-bottom: 1px solid var(--sand-border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .about-grid {
+        grid-template-columns: 0.95fr 1.15fr;
+      }
+    }
+
+    .about-image-frame {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--sand-border);
+      box-shadow: var(--shadow-card);
+      aspect-ratio: 4 / 3;
+      background-color: var(--bg-subtle);
+    }
+
+    .about-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-content {
+      max-width: 580px;
+    }
+
+    .about-title {
+      font-family: var(--font-display);
+      font-size: 2.375rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .about-title {
+        font-size: 2.875rem;
+      }
+    }
+
+    .about-text {
+      font-size: 1.0625rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 1.75rem;
+    }
+
+    .about-pillars {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 540px) {
+      .about-pillars {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .pillar-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .pillar-bullet {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--rose-primary);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .pillar-title {
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--text-main);
+      margin-bottom: 0.2rem;
+    }
+
+    .pillar-desc {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       CHAMADA FINAL (SHOPEE + WHATSAPP)
+       ========================================================================== */
+    .cta-banner-section {
+      padding: 5.5rem 0;
+    }
+
+    .cta-dual-card {
+      background-color: var(--text-main);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .cta-dual-card {
+        padding: 4.5rem 3rem;
+      }
+    }
+
+    .cta-dual-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212, 163, 150, 0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-card-title {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-wrap: balance;
+    }
+
+    @media (min-width: 768px) {
+      .cta-card-title {
+        font-size: 2.875rem;
+      }
+    }
+
+    .cta-card-desc {
+      font-size: 1.0625rem;
+      color: #D2C8C1;
+      max-width: 600px;
+      margin: 0 auto 2.25rem;
+      line-height: 1.65;
+    }
+
+    .cta-actions-row {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width: 560px) {
+      .cta-actions-row {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .btn-cta-shopee {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background-color: var(--shopee-orange);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      padding: 0.95rem 1.85rem;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 4px 14px rgba(238, 77, 45, 0.35);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-cta-shopee:hover {
+      background-color: var(--shopee-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-cta-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background-color: #2D2724;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      padding: 0.95rem 1.85rem;
+      border-radius: var(--radius-pill);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-cta-whatsapp:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .btn-cta-whatsapp svg {
+      color: var(--whatsapp-green);
+    }
+
+    /* ==========================================================================
+       RODAPÉ / FOOTER COM LOGO OFICIAL
+       ========================================================================== */
+    .site-footer {
+      background-color: #231E1C;
+      color: #E6DED8;
+      padding: 4.5rem 0 2.5rem;
+      border-top: 1px solid #332B28;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    @media (min-width: 768px) {
+      .footer-top {
+        grid-template-columns: 1.5fr 1fr 1fr;
+      }
+    }
+
+    .footer-brand-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FAF7F2;
+      border-radius: 10px;
+      padding: 6px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      flex-shrink: 0;
+    }
+
+    .footer-logo-img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .footer-brand-tagline {
+      font-size: 0.9375rem;
+      color: #ABA098;
+      max-width: 320px;
+      line-height: 1.6;
+    }
+
+    .footer-heading {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--rose-primary);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-link {
+      color: #C7BCB4;
+      font-size: 0.875rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: #ffffff;
+    }
+
+    .footer-btn-shopee {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--shopee-orange);
+      color: #ffffff;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-pill);
+      margin-top: 0.5rem;
+      transition: var(--transition-smooth);
+    }
+
+    .footer-btn-shopee:hover {
+      background-color: var(--shopee-hover);
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8125rem;
+      color: #8E837B;
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+      }
+    }
+
+    /* ==========================================================================
+       BOTÃO FLUTUANTE DO WHATSAPP (CANTO INFERIOR DIREITO)
+       ========================================================================== */
+    .whatsapp-floating {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      background-color: var(--whatsapp-green);
+      color: #ffffff;
+      padding: 0.75rem 1.15rem;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-floating);
+      transition: var(--transition-smooth);
+      text-decoration: none;
+    }
+
+    .whatsapp-floating:hover {
+      background-color: var(--whatsapp-hover);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.42);
+    }
+
+    .whatsapp-floating-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .whatsapp-floating-text {
+      font-size: 0.875rem;
+      font-weight: 600;
+      white-space: nowrap;
+      display: none;
+    }
+
+    @media (min-width: 600px) {
+      .whatsapp-floating-text {
+        display: inline;
+      }
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--rose-primary);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       CABEÇALHO COM LOGO OFICIAL
+       ========================================================================== -->
+  <header class="site-header" id="topo">
+    <div class="container nav-container">
+      
+      <!-- Marca / Logo Oficial da Encanto Artes em Fios -->
+      <a href="#topo" class="brand-logo" aria-label="Encanto Artes em Fios - Início">
+        <div class="brand-logo-container">
+          <img src="imagens/marca-dagua.png" 
+               alt="" 
+               class="brand-logo-watermark" 
+               aria-hidden="true">
+          <img src="imagens/logo.png" 
+               alt="Logo Oficial Encanto Artes em Fios" 
+               class="brand-logo-img" 
+               id="imgLogoCabecalho"
+               onerror="this.style.display='none'">
+        </div>
+        <span class="brand-name" data-tag-loja="nome">Encanto Artes em Fios</span>
+      </a>
+
+      <nav aria-label="Menu principal">
+        <ul class="nav-links">
+          <li><a href="#topo" class="nav-link">Início</a></li>
+          <li><a href="#destaques" class="nav-link">Destaques</a></li>
+          <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
+          <li><a href="#encomendas" class="nav-link">Encomendas</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn-shopee-header link-loja-shopee"
+           aria-label="Ver nossa loja oficial na Shopee (abre em nova aba)">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/>
+          </svg>
+          <span>Ver loja na Shopee</span>
+        </a>
+
+        <button class="hamburger-btn" id="btnMenuMobile" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="mobile-menu" id="menuMobile">
+      <ul class="mobile-nav-list">
+        <li><a href="#topo" class="mobile-nav-link" onclick="fecharMenuMobile()">Início</a></li>
+        <li><a href="#destaques" class="mobile-nav-link" onclick="fecharMenuMobile()">Destaques</a></li>
+        <li><a href="#como-funciona" class="mobile-nav-link" onclick="fecharMenuMobile()">Como Funciona</a></li>
+        <li><a href="#encomendas" class="mobile-nav-link" onclick="fecharMenuMobile()">Encomendas</a></li>
+        <li><a href="#sobre" class="mobile-nav-link" onclick="fecharMenuMobile()">Sobre</a></li>
+        <li><a href="#contato" class="mobile-nav-link" onclick="fecharMenuMobile()">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO COM MARCA-D'ÁGUA FLORAL "E"
+         ========================================================================== -->
+    <section class="hero-section">
+      <!-- Elemento visual decorativo / marca-d'água suave com o "E" floral -->
+      <div class="hero-brand-watermark" aria-hidden="true">
+        <img src="imagens/marca-dagua.png" 
+             alt="" 
+             id="imgMarcaDagua"
+             onerror="this.style.display='none'">
+      </div>
+
+      <div class="container">
+        <div class="hero-grid">
+          
+          <div class="hero-content">
+            <span class="hero-badge-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              Artesanato exclusivo feito à mão
+            </span>
+
+            <h1 class="hero-title">
+              Feito à mão para <em>encantar</em>.
+            </h1>
+
+            <p class="hero-lead">
+              Peças artesanais feitas com fios, carinho e atenção a cada detalhe. Encontre aquela peça especial ou fale conosco para criar algo exclusivo para você.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#destaques" class="btn-hero-primary">
+                <span>Conheça nossas peças</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <a href="#" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="btn-hero-secondary btn-whatsapp-link"
+                 id="heroWhatsappLink"
+                 data-tipo-msg="personalizada">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
+                </svg>
+                <span>Quero uma peça personalizada</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-image-container">
+            <div class="hero-image-frame">
+              <img src="imagens/hero.jpg" 
+                   alt="Peças de artesanato feitas à mão em fios pela Encanto Artes em Fios" 
+                   loading="eager"
+                   referrerpolicy="no-referrer">
+            </div>
+
+            <div class="hero-floating-seal">
+              <div class="seal-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="seal-text-title">100% Feito à Mão</p>
+                <p class="seal-text-sub">Fio por fio, com carinho</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FAIXA DE CONFIANÇA
+         ========================================================================== -->
+    <div class="trust-strip">
+      <div class="container">
+        <div class="trust-grid">
+          
+          <div class="trust-item">
+            <svg class="trust-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <div>
+              <p class="trust-text-label">Loja Oficial na Shopee</p>
+              <p class="trust-text-desc">Compra protegida com garantia</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <svg class="trust-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+            <div>
+              <p class="trust-text-label">Feito com Afeto</p>
+              <p class="trust-text-desc">Atenção minuciosa aos detalhes</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <svg class="trust-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 12h8"/>
+              <path d="M12 8v8"/>
+            </svg>
+            <div>
+              <p class="trust-text-label">Peças sob Medida</p>
+              <p class="trust-text-desc">Atendimento direto no WhatsApp</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <svg class="trust-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="1" y="3" width="15" height="13"/>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 8"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+            <div>
+              <p class="trust-text-label">Envio para todo o Brasil</p>
+              <p class="trust-text-desc">Embalado com todo carinho</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         SEÇÃO DE PRODUTOS
+         ========================================================================== -->
+    <section class="products-section" id="destaques">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">Vitrine Artesanal</span>
+          <h2 class="section-title">Nossos Destaques</h2>
+          <p class="section-subtitle">
+            Peças exclusivas feitas à mão, pensadas para trazer beleza, personalidade e aconchego aos seus momentos.
+          </p>
+        </div>
+
+        <div class="products-grid" id="gradeProdutos">
+          <!-- Renderizado dinamicamente via JavaScript -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO: COMO FUNCIONA
+         ========================================================================== -->
+    <section class="how-it-works-section" id="como-funciona">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">Processo Simples</span>
+          <h2 class="section-title">Como Funciona</h2>
+          <p class="section-subtitle">
+            Transparência e segurança do início ao fim para você ter o melhor do artesanato.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          
+          <div class="step-card">
+            <span class="step-number">01</span>
+            <h3 class="step-title">Escolha sua peça</h3>
+            <p class="step-desc">
+              Conheça nossos produtos e encontre aquele que combina com você e seu lar.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">02</span>
+            <h3 class="step-title">Compre pela Shopee</h3>
+            <p class="step-desc">
+              Finalize sua compra com a segurança, cupons de frete e praticidade da Shopee.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">03</span>
+            <h3 class="step-title">Personalize do seu jeito</h3>
+            <p class="step-desc">
+              Para peças sob medida, cores exclusivas ou projetos especiais, fale conosco pelo WhatsApp.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO DE ENCOMENDAS PERSONALIZADAS
+         ========================================================================== -->
+    <section class="custom-orders-section" id="encomendas">
+      <div class="container">
+        
+        <div class="custom-box">
+          <span class="section-tag">Peças Sob Encomenda</span>
+          <h2 class="custom-title">Quer algo feito especialmente para você?</h2>
+          <p class="custom-desc">
+            Cada peça artesanal pode ganhar um toque único. Se você tem uma ideia, uma medida específica, uma cor especial ou simplesmente imaginou algo diferente, fale conosco.
+          </p>
+
+          <a href="#" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn-custom-whatsapp btn-whatsapp-link"
+             id="whatsappOrderBtn"
+             data-tipo-msg="personalizada">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
+            </svg>
+            <span>Solicitar uma encomenda personalizada</span>
+          </a>
+
+          <div class="custom-tags-container">
+            <button type="button" class="custom-chip" onclick="definirMensagemWhatsapp('Luminária Pendente em Macramê')">
+              ✦ Luminária Macramê
+            </button>
+            <button type="button" class="custom-chip" onclick="definirMensagemWhatsapp('Suporte de Planta Macramê Coruja Boho')">
+              ✦ Suporte Coruja Boho
+            </button>
+            <button type="button" class="custom-chip" onclick="definirMensagemWhatsapp('Peça Decorativa de Vidro com Macramê')">
+              ✦ Garrafa/Vaso Decorativo
+            </button>
+            <button type="button" class="custom-chip" onclick="definirMensagemWhatsapp('Jogo de Cozinha 3 Peças')">
+              ✦ Jogo de Cozinha Artesanal
+            </button>
+            <button type="button" class="custom-chip" onclick="definirMensagemWhatsapp('Carteira de Crochê sob medida')">
+              ✦ Carteira de Crochê
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO SOBRE A MARCA
+         ========================================================================== -->
+    <section class="about-section" id="sobre">
+      <div class="container">
+        
+        <div class="about-grid">
+          
+          <div class="about-image-frame">
+            <img src="imagens/sobre.jpg" 
+                 alt="Processo artesanal cuidadoso da Encanto Artes em Fios" 
+                 loading="lazy"
+                 referrerpolicy="no-referrer">
+          </div>
+
+          <div class="about-content">
+            <span class="section-tag">Trabalho Manual & Afeto</span>
+            <h2 class="about-title">Feito com carinho, fio por fio.</h2>
+            
+            <p class="about-text">
+              A Encanto Artes em Fios nasceu do carinho pelo trabalho manual e pela beleza dos detalhes. Cada peça é produzida com cuidado, valorizando o tempo, a dedicação e o toque único que só o feito à mão consegue proporcionar.
+            </p>
+            <p class="about-text">
+              Acreditamos que a casa é um refúgio de aconchego. Por isso, selecionamos fios de alta qualidade e dedicamos carinho a cada ponto, criando peças que levam harmonia, bom gosto e personalidade para o seu dia a dia.
+            </p>
+
+            <div class="about-pillars">
+              <div class="pillar-item">
+                <div class="pillar-bullet"></div>
+                <div>
+                  <h4 class="pillar-title">Dedicação aos Detalhes</h4>
+                  <p class="pillar-desc">Ponto a ponto, garantindo acabamento limpo e impecável.</p>
+                </div>
+              </div>
+
+              <div class="pillar-item">
+                <div class="pillar-bullet"></div>
+                <div>
+                  <h4 class="pillar-title">Fios Selecionados</h4>
+                  <p class="pillar-desc">Matérias-primas macias, resistentes e de toque agradável.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CHAMADA FINAL (SHOPEE + WHATSAPP)
+         ========================================================================== -->
+    <section class="cta-banner-section" id="contato">
+      <div class="container">
+        
+        <div class="cta-dual-card">
+          <h2 class="cta-card-title">Leve a delicadeza dos fios para o seu lar</h2>
+          <p class="cta-card-desc">
+            Explore todos os nossos modelos pronta-entrega na nossa loja oficial da Shopee ou fale diretamente conosco pelo WhatsApp para tirar dúvidas e encomendar.
+          </p>
+
+          <div class="cta-actions-row">
+            <a href="#" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-cta-shopee link-loja-shopee"
+               aria-label="Ver vitrine completa na Shopee (abre em nova aba)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/>
+              </svg>
+              <span>Ver catálogo na Shopee</span>
+            </a>
+
+            <a href="#" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-cta-whatsapp btn-whatsapp-link"
+               id="finalWhatsappLink"
+               data-tipo-msg="geral"
+               aria-label="Falar no WhatsApp (abre em nova aba)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
+              </svg>
+              <span>Conversar pelo WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       RODAPÉ / FOOTER COM LOGO OFICIAL
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top">
+        
+        <div>
+          <div class="footer-brand-header">
+            <div class="footer-logo-wrap">
+              <img src="imagens/logo.png" 
+                   alt="Logo Oficial Encanto Artes em Fios" 
+                   class="footer-logo-img"
+                   id="imgLogoRodape"
+                   onerror="this.style.display='none'">
+            </div>
+            <h3 class="footer-brand-title" data-tag-loja="nome">Encanto Artes em Fios</h3>
+          </div>
+          <p class="footer-brand-tagline">
+            Artesanato feito à mão com carinho e cuidado.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="#topo" class="footer-link">Início</a></li>
+            <li><a href="#destaques" class="footer-link">Destaques</a></li>
+            <li><a href="#como-funciona" class="footer-link">Como Funciona</a></li>
+            <li><a href="#encomendas" class="footer-link">Encomendas</a></li>
+            <li><a href="#sobre" class="footer-link">Sobre</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Comprar & Falar Conosco</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="footer-btn-shopee link-loja-shopee">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/>
+                </svg>
+                <span>Comprar na Shopee</span>
+              </a>
+            </li>
+            <li style="margin-top: 0.5rem;">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="footer-link btn-whatsapp-link" id="footerWhatsappLink" data-tipo-msg="geral">
+                Falar pelo WhatsApp
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Encanto Artes em Fios. Todos os direitos reservados.</p>
+        <p>Vitrine Artesanal Premium · Feito à mão com afeto</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       BOTÃO FLUTUANTE DO WHATSAPP (CANTO INFERIOR DIREITO)
+       ========================================================================== -->
+  <a href="#" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="whatsapp-floating btn-whatsapp-link" 
+     id="btnWhatsappFlutuante"
+     data-tipo-msg="geral"
+     aria-label="Conversar com a Encanto Artes em Fios no WhatsApp (abre em nova aba)">
+    <svg class="whatsapp-floating-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
+    </svg>
+    <span class="whatsapp-floating-text">Fale no WhatsApp</span>
+  </a>
+
+  <!-- ==========================================================================
+       JAVASCRIPT — CONFIGURAÇÃO CENTRAL & RENDERIZAÇÃO AUTOMÁTICA
+       ========================================================================== -->
+  <script>
+    /*
+    ===============================================
+    GUIA RÁPIDO — COMO EDITAR O SITE
+    ===============================================
+
+    1. PARA ALTERAR A LOGO OFICIAL:
+       Coloque seu arquivo de imagem na pasta /imagens/logo.png
+       ou altere o caminho em CONFIG.logo.
+
+    2. PARA ALTERAR O LINK DA SHOPEE:
+       Altere CONFIG.linkShopee
+
+    3. PARA ALTERAR O WHATSAPP:
+       Altere CONFIG.whatsapp
+       Use somente números.
+       Exemplo:
+       5547997171688
+
+    4. PARA ALTERAR UM PRODUTO:
+       Altere nome, descrição, tamanho, preço e linkShopee dentro de PRODUTOS.
+
+    5. PARA ALTERAR A FOTO DE UM PRODUTO:
+       Coloque a nova foto dentro da pasta /imagens/
+       e altere o campo imagem em PRODUTOS.
+
+    6. PARA ADICIONAR PRODUTO:
+       Copie um bloco dentro de PRODUTOS e altere os dados.
+
+    ===============================================
+    */
+
+    // ============================================================
+    // ⚙️ ÁREA DE CONFIGURAÇÃO — ENCANTO ARTES EM FIOS
+    // ============================================================
+    // ATENÇÃO:
+    // VOCÊ SÓ PRECISA ALTERAR AS INFORMAÇÕES NESTA ÁREA.
+    // NÃO PRECISA PROCURAR AS INFORMAÇÕES PELO RESTO DO CÓDIGO.
+    // ============================================================
+
+    const CONFIG = {
+
+      // Nome oficial da loja
+      nomeLoja: "Encanto Artes em Fios",
+
+      // ========================================================
+      // LOGO OFICIAL DA MARCA:
+      // Pode ser um arquivo na pasta "imagens/logo.png"
+      // ou um link direto de uma foto na internet.
+      // ========================================================
+      logo: "imagens/logo.png",
+
+      // Elemento decorativo / marca-d'água ("E" com flores)
+      marcaDagua: "imagens/marca-dagua.png",
+
+      // ========================================================
+      // LINK OFICIAL DA LOJA NA SHOPEE:
+      // Todos os botões "Ver loja na Shopee", rodapé e chamadas
+      // usam este endereço automaticamente:
+      // ========================================================
+      linkShopee: "https://shopee.com.br/encantoemfiosartesanatos?categoryId=100636&entryPoint=ShopByPDP&itemId=58263893655",
+
+      // ========================================================
+      // NÚMERO DO WHATSAPP OFICIAL:
+      // Digite apenas os números (País 55 + DDD 47 + Número).
+      // O sistema gera o link https://wa.me/ automaticamente.
+      // ========================================================
+      whatsapp: "5547997171688",
+
+      // ========================================================
+      // MENSAGENS PADRÃO DO WHATSAPP:
+      // ========================================================
+      mensagemWhatsAppGeral: "Olá! Gostaria de saber mais sobre os produtos da Encanto Artes em Fios.",
+      mensagemWhatsAppPersonalizado: "Olá! Gostaria de fazer um pedido personalizado."
+
+    };
+
+    // ============================================================
+    // 📦 CADASTRO DOS PRODUTOS REAIS DA LOJA
+    // ============================================================
+    //
+    // COMO COLOCAR SUAS FOTOS:
+    // 1. Coloque as fotos dentro da pasta /imagens/
+    // 2. Renomeie para produto-1.jpg, produto-2.jpg, etc.
+    // 3. Ou use o link direto de uma foto na internet.
+    //
+    // PARA ADICIONAR MAIS PRODUTOS:
+    // Copie um bloco inteiro { ... } e cole abaixo do último item!
+    // ============================================================
+
+    const PRODUTOS = [
+
+      {
+        imagem: "imagens/produto-1.jpg",
+        nome: "Luminária Pendente em Macramê Artesanal",
+        descricao: "Peça exclusiva feita à mão em fio 100% algodão com suporte em madeira arqueada, iluminação afetiva que transforma e acolhe o ambiente.",
+        tamanho: "Com suporte de madeira arqueado",
+        preco: "R$ 223,16",
+        // Link DIRETO do anúncio na Shopee (se não preenchido, direciona para a loja oficial):
+        linkShopee: "https://shopee.com.br/encantoemfiosartesanatos?categoryId=100636&entryPoint=ShopByPDP&itemId=58263893655"
+      },
+
+      {
+        imagem: "imagens/produto-2.jpg",
+        nome: "Peça Decorativa de Vidro",
+        descricao: "Vaso decorativo em vidro revestido com delicada trama artesanal em fios e buquê de flores secas e algodão, toque rústico e afetuoso.",
+        tamanho: "Tamanho aproximado: 18 cm",
+        preco: "R$ 29,90",
+        linkShopee: "https://shopee.com.br/encantoemfiosartesanatos?categoryId=100636&entryPoint=ShopByPDP&itemId=58263893655"
+      },
+
+      {
+        imagem: "imagens/produto-3.jpg",
+        nome: "Suporte de Planta Macramê",
+        descricao: "Suporte de parede 'Coruja Boho' tecido à mão em nós de macramê 100% algodão, perfeito para suspender suas plantinhas com charme.",
+        tamanho: "Aproximadamente 60 cm",
+        preco: "R$ 114,00",
+        linkShopee: "https://shopee.com.br/encantoemfiosartesanatos?categoryId=100636&entryPoint=ShopByPDP&itemId=58263893655"
+      },
+
+      {
+        imagem: "imagens/produto-4.jpg",
+        nome: "Jogo de Cozinha com 03 Peças",
+        descricao: "Charme e sabor para sua cozinha com protetor cobre-alimentos em tela rendada e panos decorativos com estampa de galinhas e barrado em renda.",
+        tamanho: "Kit completo com 3 peças",
+        preco: "R$ 123,50",
+        linkShopee: "https://shopee.com.br/encantoemfiosartesanatos?categoryId=100636&entryPoint=ShopByPDP&itemId=58263893655"
+      },
+
+      {
+        imagem: "imagens/produto-5.jpg",
+        nome: "Carteira de Crochê",
+        descricao: "Carteira clutch artesanal tecida à mão em crochê azul turquesa com delicado acabamento em bico rosa e sofisticado botão em pérola.",
+        tamanho: "Tamanho carteira de mão",
+        preco: "R$ 30,00",
+        linkShopee: "https://shopee.com.br/encantoemfiosartesanatos?categoryId=100636&entryPoint=ShopByPDP&itemId=58263893655"
+      }
+
+    ];
+
+    // ============================================================
+    // MOTOR DO SITE (NÃO PRECISA EDITAR ABAIXO DESTA LINHA)
+    // ============================================================
+
+    // Renderiza os produtos automaticamente na grade
+    function renderizarProdutos() {
+      const grade = document.getElementById('gradeProdutos');
+      if (!grade) return;
+
+      grade.innerHTML = '';
+
+      PRODUTOS.forEach((produto, index) => {
+        const linkFinalShopee = (produto.linkShopee && 
+                                 produto.linkShopee.trim() !== "" && 
+                                 produto.linkShopee !== "COLE_AQUI_O_LINK_DO_PRODUTO") 
+                                ? produto.linkShopee 
+                                : CONFIG.linkShopee;
+
+        const numeroWhatsLimpo = CONFIG.whatsapp.replace(/\D/g, '');
+        const mensagemDuvida = `Olá! Gostaria de saber mais sobre a peça: ${produto.nome}.`;
+        const linkWhatsDuvida = `https://wa.me/${numeroWhatsLimpo}?text=${encodeURIComponent(mensagemDuvida)}`;
+
+        const card = document.createElement('article');
+        card.className = 'product-card';
+
+        card.innerHTML = `
+          <div class="product-media-wrapper" id="media-${index}">
+            <span class="product-badge-handmade">Feito à mão</span>
+            <img src="${produto.imagem}" 
+                 alt="${produto.nome} - Feito à mão pela Encanto Artes em Fios" 
+                 class="product-image"
+                 loading="lazy"
+                 referrerpolicy="no-referrer"
+                 onerror="tratarErroImagem(this, '${produto.nome}')">
+          </div>
+
+          <div class="product-info">
+            <h3 class="product-title">${produto.nome}</h3>
+            <p class="product-desc">${produto.descricao}</p>
+
+            <div class="product-spec-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              </svg>
+              <span>Tamanho: ${produto.tamanho}</span>
+            </div>
+
+            <div class="product-bottom-row">
+              <div class="product-price-box">
+                <span class="product-price-label">Valor</span>
+                <span class="product-price">${produto.preco}</span>
+              </div>
+
+              <a href="${linkFinalShopee}" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="btn-buy-shopee"
+                 data-produto="${produto.nome}"
+                 aria-label="Comprar ${produto.nome} na Shopee (abre em nova aba)">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/>
+                </svg>
+                <span>Comprar na Shopee</span>
+              </a>
+            </div>
+
+            <a href="${linkWhatsDuvida}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-card-whatsapp-duvida"
+               aria-label="Tirar dúvidas sobre ${produto.nome} no WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
+              </svg>
+              <span>Dúvidas desta peça? Fale no WhatsApp</span>
+            </a>
+          </div>
+        `;
+
+        grade.appendChild(card);
+      });
+    }
+
+    // Tratamento estético caso alguma foto falhe
+    function tratarErroImagem(imgElement, nomeProduto) {
+      const parent = imgElement.parentElement;
+      if (!parent) return;
+
+      parent.innerHTML = `
+        <span class="product-badge-handmade">Feito à mão</span>
+        <div class="product-image-fallback">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="fallback-title">Foto de: ${nomeProduto}</span>
+          <span class="fallback-subtitle">Substitua a imagem em CONFIGURAÇÃO &gt; PRODUTOS</span>
+        </div>
+      `;
+    }
+
+    // Aplica configurações centrais a todos os botões e links
+    function aplicarConfiguracoesGlobais() {
+      // Nome da marca
+      document.querySelectorAll('[data-tag-loja="nome"]').forEach(el => {
+        el.textContent = CONFIG.nomeLoja;
+      });
+
+      // Logo Oficial
+      if (CONFIG.logo) {
+        const logoCabecalho = document.getElementById('imgLogoCabecalho');
+        if (logoCabecalho) logoCabecalho.src = CONFIG.logo;
+
+        const logoRodape = document.getElementById('imgLogoRodape');
+        if (logoRodape) logoRodape.src = CONFIG.logo;
+      }
+
+      // Marca-d'água decorativa sutil
+      if (CONFIG.marcaDagua) {
+        const marcaDagua = document.getElementById('imgMarcaDagua');
+        if (marcaDagua) marcaDagua.src = CONFIG.marcaDagua;
+
+        document.querySelectorAll('.brand-logo-watermark').forEach(wm => {
+          wm.src = CONFIG.marcaDagua;
+        });
+      }
+
+      // Links gerais da Shopee
+      const linksShopee = document.querySelectorAll('.link-loja-shopee');
+      linksShopee.forEach(link => {
+        link.href = CONFIG.linkShopee;
+      });
+
+      // Links gerais do WhatsApp
+      const numeroLimpo = CONFIG.whatsapp.replace(/\D/g, '');
+
+      const linksWhatsapp = document.querySelectorAll('.btn-whatsapp-link');
+      linksWhatsapp.forEach(link => {
+        const tipoMsg = link.getAttribute('data-tipo-msg') || 'geral';
+        const textoMsg = (tipoMsg === 'personalizada') 
+          ? CONFIG.mensagemWhatsAppPersonalizado 
+          : CONFIG.mensagemWhatsAppGeral;
+
+        const urlFinal = `https://wa.me/${numeroLimpo}?text=${encodeURIComponent(textoMsg)}`;
+        link.href = urlFinal;
+      });
+    }
+
+    // Sugestão rápida de encomenda personalizada
+    function definirMensagemWhatsapp(tipoItem) {
+      const numeroLimpo = CONFIG.whatsapp.replace(/\D/g, '');
+      const mensagem = `Olá! Vim pelo site da ${CONFIG.nomeLoja} e gostaria de solicitar uma encomenda personalizada de: ${tipoItem}.`;
+      const urlFinal = `https://wa.me/${numeroLimpo}?text=${encodeURIComponent(mensagem)}`;
+      window.open(urlFinal, '_blank');
+    }
+
+    // Menu Mobile Hambúrguer
+    const btnMenuMobile = document.getElementById('btnMenuMobile');
+    const menuMobile = document.getElementById('menuMobile');
+
+    if (btnMenuMobile && menuMobile) {
+      btnMenuMobile.addEventListener('click', () => {
+        const isAberto = menuMobile.classList.toggle('open');
+        btnMenuMobile.classList.toggle('active');
+        btnMenuMobile.setAttribute('aria-expanded', isAberto);
+      });
+    }
+
+    function fecharMenuMobile() {
+      if (menuMobile) {
+        menuMobile.classList.remove('open');
+      }
+      if (btnMenuMobile) {
+        btnMenuMobile.classList.remove('active');
+        btnMenuMobile.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    // Inicialização segura
+    document.addEventListener('DOMContentLoaded', () => {
+      renderizarProdutos();
+      aplicarConfiguracoesGlobais();
+    });
+
+    if (document.readyState === 'interactive' || document.readyState === 'complete') {
+      renderizarProdutos();
+      aplicarConfiguracoesGlobais();
+    }
+  </script>
+
+</body>
+</html>
