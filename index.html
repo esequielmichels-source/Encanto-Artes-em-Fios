@@ -1912,13 +1912,11 @@
 
       <nav aria-label="Menu principal">
         <ul class="nav-links">
-          <li><a href="#top" class="nav-link">Início</a></li>
           <li><a href="#destaques" class="nav-link">Destaques</a></li>
           <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
           <li><a href="#encomendas" class="nav-link">Encomendas</a></li>
           <li><a href="#sobre" class="nav-link">Sobre</a></li>
           <li><a href="#guia-precificacao" class="nav-link">Para Criadores &amp; Artesãos</a></li>
-          <li><a href="#contato" class="nav-link">Contato</a></li>
         </ul>
       </nav>
 
@@ -1945,13 +1943,11 @@
 
     <div class="mobile-menu" id="menuMobile">
       <ul class="mobile-nav-list">
-        <li><a href="#top" class="mobile-nav-link" onclick="fecharMenuMobile()">Início</a></li>
         <li><a href="#destaques" class="mobile-nav-link" onclick="fecharMenuMobile()">Destaques</a></li>
         <li><a href="#como-funciona" class="mobile-nav-link" onclick="fecharMenuMobile()">Como Funciona</a></li>
         <li><a href="#encomendas" class="mobile-nav-link" onclick="fecharMenuMobile()">Encomendas</a></li>
         <li><a href="#sobre" class="mobile-nav-link" onclick="fecharMenuMobile()">Sobre</a></li>
         <li><a href="#guia-precificacao" class="mobile-nav-link" onclick="fecharMenuMobile()">Para Criadores &amp; Artesãos</a></li>
-        <li><a href="#contato" class="mobile-nav-link" onclick="fecharMenuMobile()">Contato</a></li>
       </ul>
     </div>
   </header>
@@ -2408,7 +2404,7 @@
         <div class="cta-dual-card">
           <h2 class="cta-card-title">Leve a delicadeza dos fios para o seu lar</h2>
           <p class="cta-card-desc">
-            Explore todos os nossos modelos pronta-entrega na nossa loja oficial da Shopee ou fale diretamente conosco pelo WhatsApp para tirar dúvidas e encomendar.
+            Explore todos os nossos modelos pronta entrega na nossa loja oficial da Shopee ou fale diretamente conosco pelo WhatsApp para tirar dúvidas e encomendar.
           </p>
 
           <div class="cta-actions-row">
@@ -2663,7 +2659,7 @@
       {
         imagem: "imagens/produto-4.jpg",
         nome: "Kit com 3 peças estampa Galinha",
-        descricao: "Protetor Cobre-Alimentos + Panos de pratos + Bate mão. Charme e sabor para sua cozinha com protetor cobre-alimentos em tela rendada e panos de pratos decorativos com estampa de galinhas e barrado em renda.",
+        descricao: "Protetor Cobre-Alimentos + Panos de prato + Bate mão. Charme e sabor para sua cozinha com protetor cobre-alimentos em tela rendada e panos de prato decorativos com estampa de galinhas e barrado em renda.",
         tamanho: "Kit completo com 3 peças",
         preco: "R$ 119,90",
         linkShopee: "https://shopee.com.br/Kit-com-3-pe%C3%A7as-estampa-Galinha-i.1345901170.23599554467?extraParams=%7B%22display_model_id%22%3A238809818081%2C%22model_selection_logic%22%3A3%7D"
@@ -2672,8 +2668,8 @@
       {
         imagem: "imagens/produto-5.jpg",
         nome: "Bolsa Saco de Crochê",
-        descricao: "Adicione um toque autêntico, artesanal e cheio de personalidade ao seu visual. Feita inteiramente à mão através da milenar técnica de Crochê, esta bolsa saco une o estilo boêmio à delicadeza de nós perfeitamente estruturados e um acabamento impecável..",
-        tamanho: " 20 cm de largura x 22 cm de altura",
+        descricao: "Adicione um toque autêntico, artesanal e cheio de personalidade ao seu visual. Feita inteiramente à mão através da milenar técnica de Crochê, esta bolsa saco une o estilo boêmio à delicadeza de nós perfeitamente estruturados e um acabamento impecável.",
+        tamanho: "20 cm de largura x 22 cm de altura",
         preco: "R$ 169,90",
         linkShopee: "https://shopee.com.br/Bolsa-Saco-de-Croch%C3%AA-i.1345901170.22999868512?extraParams=%7B%22display_model_id%22%3A239451335767%2C%22model_selection_logic%22%3A3%7D"
       },
@@ -2942,6 +2938,11 @@
       const btnShopee = document.querySelector('.btn-shopee-header');
       const btnRight = btnShopee ? btnShopee.getBoundingClientRect().right : null;
       console.log(`[HEADER_MEASUREMENT] innerWidth=${window.innerWidth} | clientWidth=${navContainer ? navContainer.clientWidth : null} | scrollWidth=${navContainer ? navContainer.scrollWidth : null} | btnRight=${btnRight !== null ? Number(btnRight.toFixed(2)) : 'null'}`);
+
+      const desktopLinks = Array.from(document.querySelectorAll('.nav-links .nav-link')).map(a => a.textContent.trim());
+      const mobileLinks = Array.from(document.querySelectorAll('.mobile-menu .mobile-nav-link')).map(a => a.textContent.trim());
+      console.log(`[MENU_LINKS_DIAGNOSTIC] Desktop (${desktopLinks.length}):`, JSON.stringify(desktopLinks));
+      console.log(`[MENU_LINKS_DIAGNOSTIC] Mobile (${mobileLinks.length}):`, JSON.stringify(mobileLinks));
     }
     window.addEventListener('load', logHeaderDiagnostic);
     window.addEventListener('resize', logHeaderDiagnostic);
