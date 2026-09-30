@@ -169,11 +169,18 @@
       justify-content: space-between;
       gap: 1rem;
       height: 80px;
+      max-width: 1400px;
     }
 
     @media (min-width: 1024px) {
       .nav-container {
         gap: 2rem;
+      }
+    }
+
+    @media (min-width: 1360px) {
+      .nav-container {
+        gap: 1rem;
       }
     }
 
@@ -243,6 +250,12 @@
       white-space: nowrap;
     }
 
+    @media (min-width: 1360px) {
+      .brand-name {
+        font-size: 1.375rem;
+      }
+    }
+
     .nav-links {
       display: none;
       align-items: center;
@@ -250,16 +263,10 @@
       list-style: none;
     }
 
-    @media (min-width: 1100px) {
+    @media (min-width: 1360px) {
       .nav-links {
         display: flex;
-        gap: 1.15rem;
-      }
-    }
-
-    @media (min-width: 1240px) {
-      .nav-links {
-        gap: 1.5rem;
+        gap: 0.5rem;
       }
     }
 
@@ -273,9 +280,10 @@
       white-space: nowrap;
     }
 
-    @media (min-width: 1240px) {
+    @media (min-width: 1360px) {
       .nav-link {
-        font-size: 0.9375rem;
+        font-size: 0.875rem;
+        padding: 0.25rem 0.4rem;
       }
     }
 
@@ -320,6 +328,13 @@
       white-space: nowrap;
     }
 
+    @media (min-width: 1360px) {
+      .btn-shopee-header {
+        font-size: 0.8125rem;
+        padding: 0.6rem 1rem;
+      }
+    }
+
     .btn-shopee-header:hover {
       background-color: var(--shopee-hover);
       transform: translateY(-1px);
@@ -353,7 +368,7 @@
       color: var(--text-main);
     }
 
-    @media (min-width: 1100px) {
+    @media (min-width: 1360px) {
       .hamburger-btn {
         display: none;
       }
@@ -391,6 +406,12 @@
 
     .mobile-menu.open {
       display: block;
+    }
+
+    @media (min-width: 1360px) {
+      .mobile-menu {
+        display: none !important;
+      }
     }
 
     .mobile-nav-list {
@@ -522,6 +543,7 @@
       .hero-buttons {
         flex-direction: row;
         align-items: center;
+        flex-wrap: wrap;
       }
     }
 
@@ -2911,6 +2933,18 @@
       aplicarConfiguracoesGlobais();
       inicializarEventosModal();
     }
+
+    // ============================================================
+    // MEDIÇÃO TEMPORÁRIA DO HEADER (LOAD & RESIZE)
+    // ============================================================
+    function logHeaderDiagnostic() {
+      const navContainer = document.querySelector('.nav-container');
+      const btnShopee = document.querySelector('.btn-shopee-header');
+      const btnRight = btnShopee ? btnShopee.getBoundingClientRect().right : null;
+      console.log(`[HEADER_MEASUREMENT] innerWidth=${window.innerWidth} | clientWidth=${navContainer ? navContainer.clientWidth : null} | scrollWidth=${navContainer ? navContainer.scrollWidth : null} | btnRight=${btnRight !== null ? Number(btnRight.toFixed(2)) : 'null'}`);
+    }
+    window.addEventListener('load', logHeaderDiagnostic);
+    window.addEventListener('resize', logHeaderDiagnostic);
   </script>
 
 </body>
