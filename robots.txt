@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://encanto-artes-em-fios.vercel.app/sitemap.xml
