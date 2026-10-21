@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Encanto Artes em Fios | Vitrine Premium de Artesanato</title>
-  <meta name="description" content="Peças artesanais feitas à mão em fios: luminárias, bolsas de crochê e mais. Compre na Shopee ou encomende sob medida pelo WhatsApp.">
+  <meta name="description" content="Peças artesanais feitas à mão em fios: luminárias, bolsas de crochê e mais. Compre direto ou encomende sob medida pelo WhatsApp.">
   <link rel="canonical" href="https://encanto-artes-em-fios.vercel.app/">
   <link rel="icon" type="image/png" href="imagens/logo.png">
   <link rel="apple-touch-icon" href="imagens/logo.png">
   <meta property="og:title" content="Encanto Artes em Fios | Vitrine Premium de Artesanato">
-  <meta property="og:description" content="Peças artesanais exclusivas feitas à mão para transformar e acolher o seu lar. Compre com segurança na Shopee ou fale conosco pelo WhatsApp.">
+  <meta property="og:description" content="Peças artesanais exclusivas feitas à mão para transformar e acolher o seu lar. Peças exclusivas e atendimento personalizado pelo WhatsApp.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://encanto-artes-em-fios.vercel.app/">
   <meta property="og:image" content="https://encanto-artes-em-fios.vercel.app/imagens/logo.png">
@@ -44,8 +44,6 @@
       --text-muted: #6B625C;         /* Texto secundário */
       --text-light: #948A83;         /* Informações de apoio e legendas */
 
-      --shopee-orange: #EE4D2D;      /* Cor oficial da Shopee */
-      --shopee-hover: #D73211;
       --whatsapp-green: #25D366;     /* Verde oficial do WhatsApp */
       --whatsapp-hover: #1EB957;
 
@@ -317,44 +315,7 @@
       gap: 1rem;
     }
 
-    .btn-shopee-header {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background-color: var(--shopee-orange);
-      color: #ffffff;
-      font-size: 0.875rem;
-      font-weight: 600;
-      padding: 0.65rem 1.25rem;
-      border-radius: var(--radius-pill);
-      box-shadow: 0 2px 10px rgba(238, 77, 45, 0.22);
-      transition: var(--transition-smooth);
-      white-space: nowrap;
-    }
-
-    @media (min-width: 1200px) {
-      .btn-shopee-header {
-        font-size: 0.8125rem;
-        padding: 0.6rem 1rem;
-      }
-    }
-
-    .btn-shopee-header:hover {
-      background-color: var(--shopee-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(238, 77, 45, 0.35);
-    }
-
-    .btn-shopee-header svg {
-      width: 16px;
-      height: 16px;
-    }
-
     @media (max-width: 480px) {
-      .btn-shopee-header {
-        display: none;
-      }
-
       .brand-name {
         font-size: 1.15rem;
       }
@@ -952,20 +913,7 @@
       margin-bottom: 1.35rem;
     }
 
-    .product-bottom-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-top: auto;
-      padding-top: 1.35rem;
-      border-top: 1px solid var(--sand-border);
-    }
 
-    .product-price-box {
-      display: flex;
-      flex-direction: column;
-    }
 
     .product-price-label {
       font-size: 0.6875rem;
@@ -977,59 +925,114 @@
     .product-price {
       font-size: 1.45rem;
       font-weight: 700;
-      color: var(--shopee-orange);
+      color: var(--earth-accent);
       font-variant-numeric: tabular-nums;
       white-space: nowrap;
     }
 
-    .btn-buy-shopee {
+    .product-bottom-box {
+      margin-top: auto;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--sand-border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+    }
+
+    .product-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .product-actions-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+    }
+
+    .btn-buy-whatsapp,
+    .btn-buy-paylink {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      background-color: var(--shopee-orange);
-      color: #ffffff;
+      width: 100%;
+      min-height: 44px;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-pill);
       font-weight: 600;
       font-size: 0.875rem;
-      padding: 0.75rem 1.35rem;
-      border-radius: var(--radius-pill);
-      box-shadow: 0 3px 12px rgba(238, 77, 45, 0.22);
+      box-sizing: border-box;
       transition: var(--transition-smooth);
-      white-space: nowrap;
+      text-align: center;
+      text-decoration: none;
+      line-height: 1.25;
     }
 
-    .btn-buy-shopee:hover {
-      background-color: var(--shopee-hover);
+    .btn-buy-whatsapp {
+      background-color: var(--whatsapp-green);
+      color: #ffffff;
+      box-shadow: 0 3px 12px rgba(37, 211, 102, 0.22);
+    }
+
+    .btn-buy-whatsapp:hover {
+      background-color: var(--whatsapp-hover);
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(238, 77, 45, 0.35);
+      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
     }
 
-    .btn-buy-shopee svg {
-      width: 15px;
-      height: 15px;
+    .btn-buy-paylink {
+      background-color: var(--text-main);
+      color: #ffffff;
+      box-shadow: 0 3px 12px rgba(45, 39, 36, 0.2);
     }
 
-    @media (max-width: 480px) {
-      .product-bottom-row {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.85rem;
-      }
-
-      .product-price-box {
-        flex-direction: row;
-        align-items: baseline;
-        justify-content: space-between;
-      }
-
-      .product-price {
-        white-space: nowrap;
-      }
-
-      .btn-buy-shopee {
-        width: 100%;
-      }
+    .btn-buy-paylink:hover {
+      background-color: #433B37;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(45, 39, 36, 0.3);
     }
+
+    .btn-card-whatsapp-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      width: 100%;
+      min-height: 44px;
+      padding: 0.65rem 0.85rem;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      font-size: 0.8125rem;
+      background-color: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--sand-dark);
+      box-sizing: border-box;
+      transition: var(--transition-smooth);
+      text-align: center;
+      text-decoration: none;
+      line-height: 1.25;
+    }
+
+    .btn-card-whatsapp-secondary:hover {
+      background-color: var(--bg-subtle);
+      border-color: #128C7E;
+      color: #128C7E;
+    }
+
+    .product-shipping-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin: 0;
+      line-height: 1.35;
+    }
+
+
 
     .btn-card-whatsapp-duvida {
       display: inline-flex;
@@ -1323,7 +1326,7 @@
     }
 
     /* ==========================================================================
-       CHAMADA FINAL (SHOPEE + WHATSAPP)
+       CHAMADA FINAL
        ========================================================================== */
     .cta-banner-section {
       padding: 5.5rem 0;
@@ -1397,26 +1400,6 @@
       }
     }
 
-    .btn-cta-shopee {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      background-color: var(--shopee-orange);
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 0.9375rem;
-      padding: 0.95rem 1.85rem;
-      border-radius: var(--radius-pill);
-      box-shadow: 0 4px 14px rgba(238, 77, 45, 0.28);
-      transition: var(--transition-smooth);
-    }
-
-    .btn-cta-shopee:hover {
-      background-color: var(--shopee-hover);
-      box-shadow: 0 6px 20px rgba(238, 77, 45, 0.38);
-      transform: translateY(-2px);
-    }
 
     .btn-cta-whatsapp {
       display: inline-flex;
@@ -1548,24 +1531,6 @@
       }
     }
 
-    .footer-btn-shopee {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background-color: var(--shopee-orange);
-      color: #ffffff;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      padding: 0.65rem 1.25rem;
-      border-radius: var(--radius-pill);
-      margin-top: 0.5rem;
-      transition: var(--transition-smooth);
-    }
-
-    .footer-btn-shopee:hover {
-      background-color: var(--shopee-hover);
-      transform: translateY(-2px);
-    }
 
     .footer-bottom {
       padding-top: 2rem;
@@ -1672,17 +1637,6 @@
       </nav>
 
       <div class="header-actions">
-        <a href="#" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="btn-shopee-header link-loja-shopee" 
-           aria-label="Ver nossa loja oficial na Shopee (abre em nova aba)">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/>
-          </svg>
-          <span>Ver loja na Shopee</span>
-        </a>
-
         <button class="hamburger-btn" id="btnMenuMobile" aria-label="Abrir menu de navegação" aria-expanded="false">
           <span></span>
           <span></span>
@@ -1736,8 +1690,8 @@
             </p>
 
             <div class="hero-buttons">
-              <a href="#destaques" class="btn-hero-primary">
-                <span>Conheça nossas peças</span>
+              <a href="#destaques" class="btn-hero-primary" aria-label="Ver peças em destaque">
+                <span>Ver peças</span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
@@ -1749,11 +1703,12 @@
                  rel="noopener noreferrer" 
                  class="btn-hero-secondary btn-whatsapp-link"
                  id="heroWhatsappLink"
-                 data-tipo-msg="personalizada">
+                 data-tipo-msg="geral"
+                 aria-label="Falar no WhatsApp (abre em nova aba)">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
                 </svg>
-                <span>Quero uma peça personalizada</span>
+                <span>Falar no WhatsApp</span>
               </a>
             </div>
           </div>
@@ -1795,8 +1750,8 @@
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
             <div>
-              <p class="trust-text-label">Loja Oficial na Shopee</p>
-              <p class="trust-text-desc">Compra protegida com garantia</p>
+              <p class="trust-text-label">Compra Direta</p>
+              <p class="trust-text-desc">Direto de quem faz, sem intermediários</p>
             </div>
           </div>
 
@@ -1886,9 +1841,9 @@
 
           <div class="step-card">
             <span class="step-number">02</span>
-            <h3 class="step-title">Compre pela Shopee</h3>
+            <h3 class="step-title">Compre com facilidade</h3>
             <p class="step-desc">
-              Finalize sua compra com a segurança, cupons de frete e praticidade da Shopee.
+              Finalize pelo link de pagamento ou direto pelo WhatsApp. Frete e prazo combinados pelo WhatsApp.
             </p>
           </div>
 
@@ -2005,7 +1960,7 @@
     </section>
 
     <!-- ==========================================================================
-         CHAMADA FINAL (SHOPEE + WHATSAPP)
+         CHAMADA FINAL (WHATSAPP + DESTAQUES)
          ========================================================================== -->
     <section class="cta-banner-section" id="contato">
       <div class="container">
@@ -2013,19 +1968,18 @@
         <div class="cta-dual-card">
           <h2 class="cta-card-title">Leve a delicadeza dos fios para o seu lar</h2>
           <p class="cta-card-desc">
-            Explore todos os nossos modelos pronta entrega na nossa loja oficial da Shopee ou fale diretamente conosco pelo WhatsApp para tirar dúvidas e encomendar.
+            Explore nossas peças artesanais ou fale diretamente conosco pelo WhatsApp para tirar dúvidas, combinar pagamento e encomendar.
           </p>
 
           <div class="cta-actions-row">
-            <a href="#" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="btn-cta-shopee link-loja-shopee"
-               aria-label="Ver vitrine completa na Shopee (abre em nova aba)">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/>
+            <a href="#destaques" 
+               class="btn-hero-primary"
+               aria-label="Ver peças em destaque">
+              <span>Ver peças</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
-              <span>Ver catálogo na Shopee</span>
             </a>
 
             <a href="#" 
@@ -2038,7 +1992,7 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
               </svg>
-              <span>Conversar pelo WhatsApp</span>
+              <span>Falar no WhatsApp</span>
             </a>
           </div>
         </div>
@@ -2087,14 +2041,6 @@
           <h4 class="footer-heading">Comprar & Falar Conosco</h4>
           <ul class="footer-links">
             <li>
-              <a href="#" target="_blank" rel="noopener noreferrer" class="footer-btn-shopee link-loja-shopee">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/>
-                </svg>
-                <span>Comprar na Shopee</span>
-              </a>
-            </li>
-            <li style="margin-top: 0.5rem;">
               <a href="#" target="_blank" rel="noopener noreferrer" class="footer-link btn-whatsapp-link" id="footerWhatsappLink" data-tipo-msg="geral">
                 Falar pelo WhatsApp
               </a>
@@ -2156,8 +2102,8 @@
        Coloque seu arquivo de imagem na pasta /imagens/logo.png
        ou altere o caminho em CONFIG.logo.
 
-    2. PARA ALTERAR O LINK DA SHOPEE:
-       Altere CONFIG.linkShopee
+    2. LINK DE PAGAMENTO / WHATSAPP:
+       Cada produto pode ter um linkPagamento (opcional). Se não tiver, o cliente compra pelo WhatsApp.
 
     3. PARA ALTERAR O WHATSAPP:
        Altere CONFIG.whatsapp
@@ -2166,7 +2112,7 @@
        5547997171688
 
     4. PARA ALTERAR UM PRODUTO:
-       Altere nome, descrição, tamanho, preço e linkShopee dentro de PRODUTOS.
+       Altere nome, descrição, tamanho, preço e linkPagamento dentro de PRODUTOS.
 
     5. PARA ALTERAR A FOTO DE UM PRODUTO:
        Coloque a nova foto dentro da pasta /imagens/
@@ -2201,12 +2147,6 @@
       // Elemento decorativo / marca-d'água ("E" com flores)
       marcaDagua: "imagens/marca-dagua.png",
 
-      // ========================================================
-      // LINK OFICIAL DA LOJA NA SHOPEE:
-      // Todos os botões "Ver loja na Shopee", rodapé e chamadas
-      // usam este endereço automaticamente:
-      // ========================================================
-      linkShopee: "https://shopee.com.br/encantoemfiosartesanatos?categoryId=100636&entryPoint=ShopByPDP&itemId=58263893655",
 
       // ========================================================
       // NÚMERO DO WHATSAPP OFICIAL:
@@ -2244,8 +2184,7 @@
         descricao: "Peça exclusiva feita à mão em fio 100% algodão, iluminação afetiva que transforma e acolhe o ambiente.",
         tamanho: "Altura da luminária: 38 cm, Diâmetro: aproximadamente 15 cm",
         preco: "R$ 219,90",
-        // Link DIRETO do anúncio na Shopee (se não preenchido, direciona para a loja oficial):
-        linkShopee: "https://shopee.com.br/%F0%9F%8C%BF-Lumin%C3%A1ria-Pendente-em-Macram%C3%AA-Artesanal-i.1345901170.58263893655?extraParams=%7B%22display_model_id%22%3A199623984283%2C%22model_selection_logic%22%3A3%7D"
+        linkPagamento: ""
       },
 
       {
@@ -2254,7 +2193,7 @@
         descricao: "Transforme sua casa com o Vaso Decorativo Rústico-Chic: uma peça artesanal e exclusiva feita com vidro reutilizado, corda de sisal e delicados detalhes de miçangas que trazem a aconchegante energia do campo para o seu lar.",
         tamanho: "800ml",
         preco: "R$ 29,90",
-        linkShopee: "https://shopee.com.br/Vaso-Decorativo-R%C3%BAstico-Chic-i.1345901170.58214130320?extraParams=%7B%22display_model_id%22%3A219624119392%2C%22model_selection_logic%22%3A3%7D"
+        linkPagamento: ""
       },
 
       {
@@ -2263,7 +2202,7 @@
         descricao: "Suporte de parede 'Coruja Boho' tecido à mão em nós de macramê 100% algodão, perfeito para suspender suas plantinhas com charme.",
         tamanho: "Aproximadamente 60 cm",
         preco: "R$ 114,90",
-        linkShopee: "https://shopee.com.br/Suporte-de-Planta-Macram%C3%AA-i.1345901170.58214127159?extraParams=%7B%22display_model_id%22%3A219624114689%2C%22model_selection_logic%22%3A3%7D"
+        linkPagamento: ""
       },
 
       {
@@ -2272,7 +2211,7 @@
         descricao: "Protetor Cobre-Alimentos + Panos de prato + Bate mão. Charme e sabor para sua cozinha com protetor cobre-alimentos em tela rendada e panos de prato decorativos com estampa de galinhas e barrado em renda.",
         tamanho: "Kit completo com 3 peças",
         preco: "R$ 119,90",
-        linkShopee: "https://shopee.com.br/Kit-com-3-pe%C3%A7as-estampa-Galinha-i.1345901170.23599554467?extraParams=%7B%22display_model_id%22%3A238809818081%2C%22model_selection_logic%22%3A3%7D"
+        linkPagamento: ""
       },
 
       {
@@ -2281,7 +2220,7 @@
         descricao: "Adicione um toque autêntico, artesanal e cheio de personalidade ao seu visual. Feita inteiramente à mão através da milenar técnica de Crochê, esta bolsa saco une o estilo boêmio à delicadeza de nós perfeitamente estruturados e um acabamento impecável.",
         tamanho: "20 cm de largura x 22 cm de altura",
         preco: "R$ 169,90",
-        linkShopee: "https://shopee.com.br/Bolsa-Saco-de-Croch%C3%AA-i.1345901170.22999868512?extraParams=%7B%22display_model_id%22%3A239451335767%2C%22model_selection_logic%22%3A3%7D"
+        linkPagamento: ""
       },
 
        {
@@ -2290,7 +2229,7 @@
         descricao: "Carteira clutch artesanal tecida à mão em crochê azul turquesa com delicado acabamento em bico rosa e sofisticado botão em pérola.",
         tamanho: "Tamanho carteira de mão",
         preco: "R$ 29,90",
-        linkShopee: "https://shopee.com.br/Carteira-de-Croch%C3%AA-Charmosa-i.1345901170.58264130047?extraParams=%7B%22display_model_id%22%3A139840972923%2C%22model_selection_logic%22%3A3%7D"
+        linkPagamento: ""
       },
     ];
 
@@ -2306,15 +2245,51 @@
       grade.innerHTML = '';
 
       PRODUTOS.forEach((produto, index) => {
-        const linkFinalShopee = (produto.linkShopee && 
-                                 produto.linkShopee.trim() !== "" && 
-                                 produto.linkShopee !== "COLE_AQUI_O_LINK_DO_PRODUTO") 
-                                ? produto.linkShopee 
-                                : CONFIG.linkShopee;
-
         const numeroWhatsLimpo = CONFIG.whatsapp.replace(/\D/g, '');
-        const mensagemDuvida = `Olá! Gostaria de saber mais sobre a peça: ${produto.nome}.`;
-        const linkWhatsDuvida = `https://wa.me/${numeroWhatsLimpo}?text=${encodeURIComponent(mensagemDuvida)}`;
+        const mensagemCompra = `Olá! Quero comprar a peça "${produto.nome}" (${produto.preco}). Meu CEP para calcular o frete é: `;
+        const linkWhatsCompra = `https://wa.me/${numeroWhatsLimpo}?text=${encodeURIComponent(mensagemCompra)}`;
+
+        const temLinkPagamento = produto.linkPagamento && produto.linkPagamento.trim().startsWith("https://");
+
+        let botoesHtml = "";
+        if (temLinkPagamento) {
+          botoesHtml = `
+            <a href="${produto.linkPagamento.trim()}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-buy-paylink"
+               aria-label="Comprar agora ${produto.nome} (abre em nova aba)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                <line x1="2" y1="10" x2="22" y2="10"/>
+              </svg>
+              <span>Comprar agora</span>
+            </a>
+            <a href="${linkWhatsCompra}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-card-whatsapp-secondary"
+               aria-label="Prefere pagar pelo WhatsApp? Fale com a gente sobre ${produto.nome}">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
+              </svg>
+              <span>Prefere pagar pelo WhatsApp? Fale com a gente</span>
+            </a>
+          `;
+        } else {
+          botoesHtml = `
+            <a href="${linkWhatsCompra}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-buy-whatsapp"
+               aria-label="Comprar ${produto.nome} pelo WhatsApp (abre em nova aba)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
+              </svg>
+              <span>Comprar pelo WhatsApp</span>
+            </a>
+          `;
+        }
 
         const card = document.createElement('article');
         card.className = 'product-card';
@@ -2324,9 +2299,9 @@
             <span class="product-badge-handmade">Feito à mão</span>
             <img src="${produto.imagem}" 
                  alt="${produto.nome} - Feito à mão pela Encanto Artes em Fios" 
-                 class="product-image"
-                 loading="lazy"
-                 referrerpolicy="no-referrer"
+                 class="product-image" 
+                 loading="lazy" 
+                 referrerpolicy="no-referrer" 
                  onerror="tratarErroImagem(this, '${produto.nome}')">
           </div>
 
@@ -2341,35 +2316,18 @@
               <span>Tamanho: ${produto.tamanho}</span>
             </div>
 
-            <div class="product-bottom-row">
-              <div class="product-price-box">
+            <div class="product-bottom-box">
+              <div class="product-price-row">
                 <span class="product-price-label">Valor</span>
                 <span class="product-price">${produto.preco}</span>
               </div>
 
-              <a href="${linkFinalShopee}" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="btn-buy-shopee"
-                 data-produto="${produto.nome}"
-                 aria-label="Comprar ${produto.nome} na Shopee (abre em nova aba)">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/>
-                </svg>
-                <span>Comprar na Shopee</span>
-              </a>
-            </div>
+              <div class="product-actions-col">
+                ${botoesHtml}
+              </div>
 
-            <a href="${linkWhatsDuvida}" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="btn-card-whatsapp-duvida"
-               aria-label="Tirar dúvidas sobre ${produto.nome} no WhatsApp">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
-              </svg>
-              <span>Dúvidas desta peça? Fale no WhatsApp</span>
-            </a>
+              <p class="product-shipping-note">Frete e prazo combinados pelo WhatsApp</p>
+            </div>
           </div>
         `;
 
@@ -2422,11 +2380,6 @@
         });
       }
 
-      // Links gerais da Shopee
-      const linksShopee = document.querySelectorAll('.link-loja-shopee');
-      linksShopee.forEach(link => {
-        link.href = CONFIG.linkShopee;
-      });
 
       // Links gerais do WhatsApp
       const numeroLimpo = CONFIG.whatsapp.replace(/\D/g, '');
