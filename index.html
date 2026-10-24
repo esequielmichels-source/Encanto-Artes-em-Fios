@@ -962,74 +962,95 @@
       gap: 0.5rem;
       width: 100%;
       min-height: 44px;
-      padding: 0.75rem 1rem;
+      padding: 0.75rem 1.25rem;
       border-radius: var(--radius-pill);
       font-weight: 600;
-      font-size: 0.875rem;
+      font-size: 0.9375rem;
+      font-family: inherit;
       box-sizing: border-box;
-      transition: var(--transition-smooth);
+      transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
       text-align: center;
       text-decoration: none;
       line-height: 1.25;
+      border: none;
+    }
+
+    .btn-buy-paylink {
+      background-color: var(--rose-primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(212, 163, 150, 0.35);
+    }
+
+    .btn-buy-paylink:hover {
+      background-color: var(--rose-dark);
+      color: #ffffff;
+    }
+
+    .btn-buy-paylink:active {
+      background-color: var(--earth-accent);
+      color: #ffffff;
+    }
+
+    .btn-buy-paylink:focus-visible {
+      outline: 2px solid var(--rose-dark);
+      outline-offset: 2px;
     }
 
     .btn-buy-whatsapp {
       background-color: var(--whatsapp-green);
       color: #ffffff;
-      box-shadow: 0 3px 12px rgba(37, 211, 102, 0.22);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
     }
 
     .btn-buy-whatsapp:hover {
       background-color: var(--whatsapp-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
-    }
-
-    .btn-buy-paylink {
-      background-color: var(--text-main);
       color: #ffffff;
-      box-shadow: 0 3px 12px rgba(45, 39, 36, 0.2);
     }
 
-    .btn-buy-paylink:hover {
-      background-color: #433B37;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(45, 39, 36, 0.3);
+    .btn-buy-whatsapp:active {
+      background-color: #179644;
+      color: #ffffff;
     }
 
-    .btn-card-whatsapp-secondary {
+    .btn-buy-whatsapp:focus-visible {
+      outline: 2px solid var(--whatsapp-hover);
+      outline-offset: 2px;
+    }
+
+    .product-secure-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.45rem;
-      width: 100%;
-      min-height: 44px;
-      padding: 0.65rem 0.85rem;
-      border-radius: var(--radius-pill);
-      font-weight: 600;
-      font-size: 0.8125rem;
-      background-color: var(--bg-surface);
-      color: var(--text-main);
-      border: 1px solid var(--sand-dark);
-      box-sizing: border-box;
-      transition: var(--transition-smooth);
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin: 0.15rem 0 0;
       text-align: center;
-      text-decoration: none;
-      line-height: 1.25;
+      line-height: 1.3;
     }
 
-    .btn-card-whatsapp-secondary:hover {
-      background-color: var(--bg-subtle);
-      border-color: #128C7E;
-      color: #128C7E;
+    .product-secure-badge svg {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      color: var(--earth-accent);
     }
 
     .product-shipping-note {
+      display: block;
       font-size: 0.75rem;
       color: var(--text-muted);
       text-align: center;
       margin: 0;
       line-height: 1.35;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 150ms ease;
+      cursor: pointer;
+    }
+
+    .product-shipping-note:hover {
+      color: var(--earth-accent);
     }
 
 
@@ -1595,613 +1616,6 @@
       }
     }
 
-    /* ==========================================================================
-       CARRINHO DE COMPRAS — ESTILOS COM PREFIXO carrinho-
-       ========================================================================== */
-    .carrinho-btn-add {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      width: 100%;
-      min-height: 44px;
-      padding: 0.75rem 1.25rem;
-      background-color: var(--rose-primary);
-      color: #ffffff;
-      border: none;
-      border-radius: var(--radius-pill);
-      font-size: 0.9375rem;
-      font-weight: 600;
-      font-family: inherit;
-      cursor: pointer;
-      box-shadow: 0 4px 14px rgba(212, 163, 150, 0.35);
-      transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
-      box-sizing: border-box;
-    }
-
-    .carrinho-btn-add:focus-visible {
-      outline: 2px solid var(--rose-dark);
-      outline-offset: 2px;
-    }
-
-    .carrinho-btn-add:active {
-      background-color: var(--earth-accent);
-      color: #ffffff;
-    }
-
-    .carrinho-btn-add.carrinho-btn-adicionado {
-      background-color: var(--whatsapp-green);
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
-    }
-
-    .carrinho-btn-add.carrinho-btn-adicionado:focus-visible {
-      outline: 2px solid var(--whatsapp-hover);
-      outline-offset: 2px;
-    }
-
-    .carrinho-btn-add.carrinho-btn-adicionado:active {
-      background-color: var(--whatsapp-hover);
-      color: #ffffff;
-    }
-
-    .carrinho-btn-outline {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      width: 100%;
-      min-height: 44px;
-      padding: 0.65rem 1.15rem;
-      background-color: transparent;
-      color: var(--text-main);
-      border: 1.5px solid var(--sand-dark);
-      border-radius: var(--radius-pill);
-      font-size: 0.875rem;
-      font-weight: 600;
-      font-family: inherit;
-      text-decoration: none;
-      box-sizing: border-box;
-      transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
-    }
-
-    .carrinho-btn-outline:focus-visible {
-      outline: 2px solid var(--earth-accent);
-      outline-offset: 2px;
-    }
-
-    .carrinho-btn-outline:active {
-      background-color: var(--sand-border);
-      border-color: var(--earth-accent);
-      color: var(--text-main);
-    }
-
-    .carrinho-flutuante {
-      position: fixed;
-      bottom: 24px;
-      bottom: calc(24px + env(safe-area-inset-bottom, 0px));
-      left: 24px;
-      left: calc(24px + env(safe-area-inset-left, 0px));
-      z-index: 99;
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      background-color: var(--rose-primary);
-      color: #ffffff;
-      padding: 0.75rem 1.15rem;
-      border: none;
-      border-radius: var(--radius-pill);
-      box-shadow: var(--shadow-floating);
-      transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
-      cursor: pointer;
-      font-family: inherit;
-    }
-
-    .carrinho-flutuante:focus-visible {
-      outline: 2px solid var(--rose-dark);
-      outline-offset: 2px;
-    }
-
-    .carrinho-flutuante:active {
-      background-color: var(--earth-accent);
-      color: #ffffff;
-    }
-
-    .carrinho-flutuante-icon {
-      width: 24px;
-      height: 24px;
-      flex-shrink: 0;
-    }
-
-    .carrinho-flutuante-texto {
-      font-size: 0.875rem;
-      font-weight: 600;
-      white-space: nowrap;
-      display: none;
-    }
-
-    @media (min-width: 600px) {
-      .carrinho-flutuante-texto {
-        display: inline;
-      }
-    }
-
-    .carrinho-flutuante-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 22px;
-      height: 22px;
-      padding: 0 6px;
-      background-color: #ffffff;
-      color: var(--rose-primary);
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    /* Overlay / Backdrop */
-    .carrinho-overlay {
-      position: fixed;
-      inset: 0;
-      background-color: rgba(45, 39, 36, 0.55);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      z-index: 1000;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
-    }
-
-    @media (min-width: 768px) {
-      .carrinho-overlay {
-        align-items: stretch;
-      }
-    }
-
-    .carrinho-overlay.carrinho-ativo {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* Gaveta / Drawer */
-    .carrinho-gaveta {
-      background-color: var(--bg-surface);
-      width: 100%;
-      max-height: 85vh;
-      display: flex;
-      flex-direction: column;
-      border-top-left-radius: var(--radius-lg);
-      border-top-right-radius: var(--radius-lg);
-      box-shadow: 0 -10px 40px rgba(45, 39, 36, 0.2);
-      transform: translateY(100%);
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      box-sizing: border-box;
-      outline: none;
-    }
-
-    @media (min-width: 768px) {
-      .carrinho-gaveta {
-        width: 420px;
-        max-width: 100%;
-        max-height: 100vh;
-        height: 100%;
-        border-top-left-radius: var(--radius-lg);
-        border-bottom-left-radius: var(--radius-lg);
-        border-top-right-radius: 0;
-        border-left: 1px solid var(--sand-border);
-        box-shadow: -10px 0 40px rgba(45, 39, 36, 0.2);
-        transform: translateX(100%);
-      }
-    }
-
-    .carrinho-overlay.carrinho-ativo .carrinho-gaveta {
-      transform: translate(0, 0);
-    }
-
-    /* Header da gaveta */
-    .carrinho-gaveta-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem 1.5rem;
-      border-bottom: 1px solid var(--sand-border);
-      background-color: var(--bg-surface);
-      border-top-left-radius: inherit;
-      border-top-right-radius: inherit;
-      flex-shrink: 0;
-    }
-
-    .carrinho-gaveta-header-title {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      color: var(--text-main);
-    }
-
-    .carrinho-gaveta-titulo {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--text-main);
-      margin: 0;
-    }
-
-    .carrinho-contador-header {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--rose-primary);
-    }
-
-    .carrinho-gaveta-fechar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border: 1px solid var(--sand-border);
-      background-color: var(--bg-subtle);
-      border-radius: 50%;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
-    }
-
-    .carrinho-gaveta-fechar:focus-visible {
-      outline: 2px solid var(--rose-dark);
-      outline-offset: 2px;
-    }
-
-    .carrinho-gaveta-fechar:active {
-      background-color: var(--sand-dark);
-      color: var(--text-main);
-    }
-
-    /* Corpo com scroll */
-    .carrinho-gaveta-corpo {
-      flex: 1;
-      overflow-y: auto;
-      padding: 1.25rem 1.5rem;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .carrinho-lista {
-      display: flex;
-      flex-direction: column;
-      gap: 1.15rem;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .carrinho-item {
-      display: flex;
-      gap: 1rem;
-      padding-bottom: 1.15rem;
-      border-bottom: 1px solid var(--sand-border);
-      align-items: flex-start;
-    }
-
-    .carrinho-item-img {
-      width: 72px;
-      height: 72px;
-      border-radius: var(--radius-sm);
-      object-fit: cover;
-      background-color: var(--bg-subtle);
-      border: 1px solid var(--sand-border);
-      flex-shrink: 0;
-    }
-
-    .carrinho-item-info {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .carrinho-item-nome {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--text-main);
-      margin: 0 0 0.25rem;
-      line-height: 1.35;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .carrinho-item-preco {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--earth-accent);
-      margin: 0 0 0.65rem;
-    }
-
-    .carrinho-item-acoes {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-    }
-
-    .carrinho-item-qtd-wrap {
-      display: inline-flex;
-      align-items: center;
-      border: 1px solid var(--sand-border);
-      border-radius: var(--radius-pill);
-      background-color: var(--bg-subtle);
-      overflow: hidden;
-    }
-
-    .carrinho-btn-qtd {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border: none;
-      background: transparent;
-      color: var(--text-main);
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 180ms ease, color 180ms ease;
-    }
-
-    .carrinho-btn-qtd:focus-visible {
-      outline: 2px solid var(--rose-dark);
-      outline-offset: -1px;
-    }
-
-    .carrinho-btn-qtd:active:not(:disabled) {
-      background-color: var(--sand-dark);
-      color: var(--text-main);
-    }
-
-    .carrinho-btn-qtd:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
-
-    .carrinho-qtd-num {
-      min-width: 26px;
-      text-align: center;
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    .carrinho-btn-remover {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      font-size: 0.75rem;
-      text-decoration: underline;
-      cursor: pointer;
-      padding: 0.25rem 0.5rem;
-      transition: color 180ms ease;
-      font-family: inherit;
-    }
-
-    .carrinho-btn-remover:focus-visible {
-      outline: 2px solid var(--earth-accent);
-      outline-offset: 2px;
-    }
-
-    .carrinho-btn-remover:active {
-      color: #991b1b;
-    }
-
-    /* Estado Vazio */
-    .carrinho-vazio {
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-
-    .carrinho-vazio-icon {
-      width: 56px;
-      height: 56px;
-      color: var(--sand-dark);
-      margin: 0 auto 1rem;
-      display: block;
-    }
-
-    .carrinho-vazio-msg {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin: 0 0 1.5rem;
-    }
-
-    .carrinho-btn-ver-pecas {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      min-height: 44px;
-      padding: 0.75rem 1.5rem;
-      background-color: var(--rose-primary);
-      color: #ffffff;
-      border: none;
-      border-radius: var(--radius-pill);
-      font-size: 0.875rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
-      font-family: inherit;
-      text-decoration: none;
-    }
-
-    .carrinho-btn-ver-pecas:focus-visible {
-      outline: 2px solid var(--rose-dark);
-      outline-offset: 2px;
-    }
-
-    .carrinho-btn-ver-pecas:active {
-      background-color: var(--earth-accent);
-      color: #ffffff;
-    }
-
-    /* Footer da gaveta */
-    .carrinho-gaveta-footer {
-      border-top: 1px solid var(--sand-border);
-      padding: 1.25rem 1.5rem;
-      background-color: var(--bg-surface);
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-      padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
-    }
-
-    .carrinho-total-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-    }
-
-    .carrinho-total-label {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    .carrinho-total-valor {
-      font-family: var(--font-display);
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: var(--earth-accent);
-    }
-
-    .carrinho-nota-frete {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-align: center;
-      margin: 0;
-    }
-
-    .carrinho-btn-finalizar {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      width: 100%;
-      min-height: 48px;
-      padding: 0.85rem 1.5rem;
-      background-color: var(--whatsapp-green);
-      color: #ffffff;
-      border: none;
-      border-radius: var(--radius-pill);
-      font-size: 0.9375rem;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
-      transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
-      font-family: inherit;
-      box-sizing: border-box;
-    }
-
-    .carrinho-btn-finalizar:focus-visible {
-      outline: 2px solid var(--whatsapp-hover);
-      outline-offset: 2px;
-    }
-
-    .carrinho-btn-finalizar:active {
-      background-color: #179644;
-      color: #ffffff;
-    }
-
-    .carrinho-btn-limpar {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      font-size: 0.8125rem;
-      text-decoration: underline;
-      cursor: pointer;
-      text-align: center;
-      padding: 0.25rem;
-      font-family: inherit;
-      transition: color 180ms ease;
-    }
-
-    .carrinho-btn-limpar:focus-visible {
-      outline: 2px solid var(--earth-accent);
-      outline-offset: 2px;
-    }
-
-    .carrinho-btn-limpar:active {
-      color: #991b1b;
-    }
-
-    /* ==========================================================================
-       CARRINHO — ESTADOS :hover CONDICIONADOS A DISPOSITIVOS COM MOUSE
-       ========================================================================== */
-    @media (hover: hover) and (pointer: fine) {
-      .carrinho-btn-add:hover {
-        background-color: var(--rose-dark);
-        color: #ffffff;
-      }
-
-      .carrinho-btn-add.carrinho-btn-adicionado:hover {
-        background-color: var(--whatsapp-hover);
-        color: #ffffff;
-      }
-
-      .carrinho-btn-outline:hover {
-        background-color: var(--bg-subtle);
-        border-color: var(--earth-accent);
-        color: var(--text-main);
-      }
-
-      .carrinho-flutuante:hover {
-        background-color: var(--rose-dark);
-        color: #ffffff;
-      }
-
-      .carrinho-gaveta-fechar:hover {
-        background-color: var(--rose-soft);
-        color: var(--text-main);
-        border-color: var(--sand-dark);
-      }
-
-      .carrinho-btn-qtd:hover:not(:disabled) {
-        background-color: var(--rose-soft);
-        color: var(--text-main);
-      }
-
-      .carrinho-btn-remover:hover {
-        color: #dc2626;
-      }
-
-      .carrinho-btn-ver-pecas:hover {
-        background-color: var(--rose-dark);
-        color: #ffffff;
-      }
-
-      .carrinho-btn-finalizar:hover {
-        background-color: var(--whatsapp-hover);
-        color: #ffffff;
-      }
-
-      .carrinho-btn-limpar:hover {
-        color: #dc2626;
-      }
-    }
-
-    /* Screen reader announcement */
-    .carrinho-live-region {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
   </style>
 </head>
 <body>
@@ -2692,70 +2106,7 @@
     </div>
   </div>
 
-  <!-- ==========================================================================
-       BOTÃO FLUTUANTE DO CARRINHO (CANTO INFERIOR ESQUERDO)
-       ========================================================================== -->
-  <button type="button" 
-          class="carrinho-flutuante" 
-          id="btnCarrinhoFlutuante" 
-          aria-label="Abrir carrinho de compras" 
-          onclick="abrirCarrinho()" 
-          style="display: none;">
-    <svg class="carrinho-flutuante-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
-      <path d="M3 6h18"/>
-      <path d="M16 10a4 4 0 0 1-8 0"/>
-    </svg>
-    <span class="carrinho-flutuante-badge" id="carrinhoBadgeQtd">0</span>
-    <span class="carrinho-flutuante-texto">Ver Carrinho</span>
-  </button>
 
-  <!-- ==========================================================================
-       GAVETA MODAL DO CARRINHO DE COMPRAS
-       ========================================================================== -->
-  <div class="carrinho-overlay" id="carrinhoOverlay" aria-hidden="true" onclick="fecharCarrinhoSeBackdrop(event)">
-    <div class="carrinho-gaveta" id="carrinhoGaveta" role="dialog" aria-modal="true" aria-labelledby="carrinhoTitulo" tabindex="-1">
-      <div class="carrinho-gaveta-header">
-        <div class="carrinho-gaveta-header-title">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
-            <path d="M3 6h18"/>
-            <path d="M16 10a4 4 0 0 1-8 0"/>
-          </svg>
-          <h2 id="carrinhoTitulo" class="carrinho-gaveta-titulo">Seu Carrinho</h2>
-          <span class="carrinho-contador-header" id="carrinhoContadorHeader">(0)</span>
-        </div>
-        <button type="button" class="carrinho-gaveta-fechar" id="btnFecharCarrinho" onclick="fecharCarrinho()" aria-label="Fechar carrinho (ESC)">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-
-      <div class="carrinho-gaveta-corpo" id="carrinhoCorpo">
-        <!-- Renderizado dinamicamente via renderizarCarrinho() -->
-      </div>
-
-      <div class="carrinho-gaveta-footer" id="carrinhoFooter">
-        <div class="carrinho-total-row">
-          <span class="carrinho-total-label">Total dos produtos:</span>
-          <span class="carrinho-total-valor" id="carrinhoTotalValor">R$ 0,00</span>
-        </div>
-        <p class="carrinho-nota-frete">Frete e prazo combinados pelo WhatsApp</p>
-        <button type="button" class="carrinho-btn-finalizar" id="btnFinalizarCarrinho" onclick="executarFinalizacaoCarrinho()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
-          </svg>
-          <span>Finalizar pelo WhatsApp</span>
-        </button>
-        <button type="button" class="carrinho-btn-limpar" onclick="limparCarrinho()">Limpar carrinho</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Região acessível de anúncios dinâmicos para leitores de tela -->
-  <div id="carrinhoLiveRegion" class="carrinho-live-region" aria-live="polite" aria-atomic="true"></div>
 
   <!-- ==========================================================================
        JAVASCRIPT — CONFIGURAÇÃO CENTRAL & RENDERIZAÇÃO AUTOMÁTICA
@@ -2930,58 +2281,33 @@
         let botoesHtml = "";
         if (temLinkPagamento) {
           botoesHtml = `
-            <button type="button" 
-                    class="carrinho-btn-add" 
-                    onclick="adicionarAoCarrinho('${produto.id}', this)"
-                    aria-label="Adicionar ${produto.nome} ao carrinho">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
-                <path d="M3 6h18"/>
-                <path d="M16 10a4 4 0 0 1-8 0"/>
-              </svg>
-              <span>Adicionar ao carrinho</span>
-            </button>
             <a href="${produto.linkPagamento.trim()}" 
                target="_blank" 
                rel="noopener noreferrer" 
-               class="carrinho-btn-outline"
+               class="btn-buy-paylink"
                aria-label="Comprar agora ${produto.nome} (abre em nova aba)">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="5" width="20" height="14" rx="2"/>
                 <line x1="2" y1="10" x2="22" y2="10"/>
               </svg>
               <span>Comprar agora</span>
             </a>
-            <a href="${linkWhatsCompra}" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="btn-card-whatsapp-secondary"
-               aria-label="Prefere pagar pelo WhatsApp? Fale com a gente sobre ${produto.nome}">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
+            <div class="product-secure-badge">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
               </svg>
-              <span>Prefere pagar pelo WhatsApp? Fale com a gente</span>
-            </a>
+              <span>Cartão ou Pix · Pagamento seguro pelo Mercado Pago</span>
+            </div>
           `;
         } else {
           botoesHtml = `
-            <button type="button" 
-                    class="carrinho-btn-add" 
-                    onclick="adicionarAoCarrinho('${produto.id}', this)"
-                    aria-label="Adicionar ${produto.nome} ao carrinho">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
-                <path d="M3 6h18"/>
-                <path d="M16 10a4 4 0 0 1-8 0"/>
-              </svg>
-              <span>Adicionar ao carrinho</span>
-            </button>
             <a href="${linkWhatsCompra}" 
                target="_blank" 
                rel="noopener noreferrer" 
-               class="carrinho-btn-outline"
+               class="btn-buy-whatsapp"
                aria-label="Comprar ${produto.nome} pelo WhatsApp (abre em nova aba)">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
               </svg>
               <span>Comprar pelo WhatsApp</span>
@@ -3024,7 +2350,13 @@
                 ${botoesHtml}
               </div>
 
-              <p class="product-shipping-note">Frete e prazo combinados pelo WhatsApp</p>
+              <a href="${linkWhatsCompra}" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="product-shipping-note"
+                 aria-label="Tirar dúvidas sobre frete e prazo de ${produto.nome} pelo WhatsApp">
+                Frete e prazo combinados pelo WhatsApp
+              </a>
             </div>
           </div>
         `;
@@ -3199,11 +2531,6 @@
       // Fecha ao pressionar ESC no teclado
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' || e.key === 'Esc') {
-          const overlay = document.getElementById('carrinhoOverlay');
-          if (overlay && overlay.classList.contains('carrinho-ativo')) {
-            fecharCarrinho();
-            return;
-          }
           fecharModalImagem();
         }
       });
@@ -3227,339 +2554,12 @@
       });
     }
 
-    // ============================================================
-    // 🛒 MOTOR DO CARRINHO DE COMPRAS (vanilla JS + localStorage)
-    // ============================================================
-    const CARRINHO_STORAGE_KEY = 'encanto_carrinho_v1';
-    let carrinhoMemoria = [];
-    let ultimoElementoFocado = null;
-
-    // Converte preço formatado (ex: "R$ 219,90") para centavos (inteiro)
-    function precoParaCentavos(precoStr) {
-      const limpo = String(precoStr || '').replace(/[^\d]/g, '');
-      return parseInt(limpo, 10) || 0;
-    }
-
-    // Converte centavos (inteiro) para preço formatado (ex: "R$ 219,90")
-    function centavosParaPreco(centavos) {
-      const reais = (centavos / 100).toFixed(2);
-      const [inteiro, decimal] = reais.split('.');
-      return `R$ ${inteiro},${decimal}`;
-    }
-
-    function obterListaProdutos() {
-      return (CONFIG && CONFIG.PRODUTOS) ? CONFIG.PRODUTOS : PRODUTOS;
-    }
-
-    function obterProdutoPorId(id) {
-      return obterListaProdutos().find(p => p.id === id);
-    }
-
-    // Carrega itens do localStorage com validação estrita e descarte silencioso de itens inexistentes
-    function carregarCarrinho() {
-      try {
-        const dados = localStorage.getItem(CARRINHO_STORAGE_KEY);
-        if (!dados) {
-          carrinhoMemoria = [];
-          return carrinhoMemoria;
-        }
-        const parsed = JSON.parse(dados);
-        if (!Array.isArray(parsed)) {
-          carrinhoMemoria = [];
-          return carrinhoMemoria;
-        }
-        const itensValidos = [];
-        parsed.forEach(item => {
-          if (item && typeof item.id === 'string' && obterProdutoPorId(item.id)) {
-            const qtdNum = parseInt(item.qtd, 10) || 1;
-            const qtdClamped = Math.max(1, Math.min(20, qtdNum));
-            itensValidos.push({ id: item.id, qtd: qtdClamped });
-          }
-        });
-        carrinhoMemoria = itensValidos;
-      } catch (e) {
-        if (!Array.isArray(carrinhoMemoria)) {
-          carrinhoMemoria = [];
-        }
-      }
-      return carrinhoMemoria;
-    }
-
-    // Salva itens no localStorage (guarda apenas {id, qtd})
-    function salvarCarrinho() {
-      try {
-        localStorage.setItem(CARRINHO_STORAGE_KEY, JSON.stringify(carrinhoMemoria));
-      } catch (e) {
-        // Fallback em memória caso storage esteja inacessível
-      }
-      atualizarInterfaceCarrinho();
-    }
-
-    function anunciarAoLeitorTela(mensagem) {
-      const regiao = document.getElementById('carrinhoLiveRegion');
-      if (regiao) {
-        regiao.textContent = '';
-        setTimeout(() => {
-          regiao.textContent = mensagem;
-        }, 50);
-      }
-    }
-
-    function adicionarAoCarrinho(produtoId, botaoElemento) {
-      const produto = obterProdutoPorId(produtoId);
-      if (!produto) return;
-
-      const itemExistente = carrinhoMemoria.find(item => item.id === produtoId);
-      if (itemExistente) {
-        if (itemExistente.qtd < 20) {
-          itemExistente.qtd += 1;
-        }
-      } else {
-        carrinhoMemoria.push({ id: produtoId, qtd: 1 });
-      }
-
-      salvarCarrinho();
-      anunciarAoLeitorTela(`"${produto.nome}" adicionado ao carrinho.`);
-
-      if (botaoElemento) {
-        const conteudoOriginal = botaoElemento.innerHTML;
-        botaoElemento.classList.add('carrinho-btn-adicionado');
-        botaoElemento.innerHTML = `
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-          <span>Adicionado ✓</span>
-        `;
-        setTimeout(() => {
-          botaoElemento.classList.remove('carrinho-btn-adicionado');
-          botaoElemento.innerHTML = conteudoOriginal;
-        }, 1500);
-      }
-    }
-
-    function alterarQuantidade(produtoId, delta) {
-      const item = carrinhoMemoria.find(i => i.id === produtoId);
-      if (!item) return;
-
-      const novaQtd = item.qtd + delta;
-      if (novaQtd >= 1 && novaQtd <= 20) {
-        item.qtd = novaQtd;
-        salvarCarrinho();
-      }
-    }
-
-    function removerDoCarrinho(produtoId) {
-      const produto = obterProdutoPorId(produtoId);
-      carrinhoMemoria = carrinhoMemoria.filter(item => item.id !== produtoId);
-      salvarCarrinho();
-      if (produto) {
-        anunciarAoLeitorTela(`"${produto.nome}" removido do carrinho.`);
-      }
-    }
-
-    function limparCarrinho() {
-      carrinhoMemoria = [];
-      salvarCarrinho();
-      anunciarAoLeitorTela('O carrinho foi esvaziado.');
-    }
-
-    function calcularTotalCarrinhoCentavos() {
-      let totalCentavos = 0;
-      carrinhoMemoria.forEach(item => {
-        const prod = obterProdutoPorId(item.id);
-        if (prod) {
-          totalCentavos += precoParaCentavos(prod.preco) * item.qtd;
-        }
-      });
-      return totalCentavos;
-    }
-
-    function calcularQuantidadeTotalItens() {
-      return carrinhoMemoria.reduce((acc, item) => acc + item.qtd, 0);
-    }
-
-    function atualizarInterfaceCarrinho() {
-      const qtdTotal = calcularQuantidadeTotalItens();
-      const totalCentavos = calcularTotalCarrinhoCentavos();
-      const totalFormatado = centavosParaPreco(totalCentavos);
-
-      const btnFlutuante = document.getElementById('btnCarrinhoFlutuante');
-      const badgeQtd = document.getElementById('carrinhoBadgeQtd');
-      if (btnFlutuante && badgeQtd) {
-        badgeQtd.textContent = String(qtdTotal);
-        if (qtdTotal > 0) {
-          btnFlutuante.style.display = 'flex';
-        } else {
-          btnFlutuante.style.display = 'none';
-        }
-      }
-
-      const contadorHeader = document.getElementById('carrinhoContadorHeader');
-      if (contadorHeader) {
-        contadorHeader.textContent = `(${qtdTotal})`;
-      }
-
-      const totalEl = document.getElementById('carrinhoTotalValor');
-      if (totalEl) {
-        totalEl.textContent = totalFormatado;
-      }
-
-      renderizarConteudoGaveta();
-    }
-
-    function renderizarConteudoGaveta() {
-      const corpo = document.getElementById('carrinhoCorpo');
-      const footer = document.getElementById('carrinhoFooter');
-      if (!corpo) return;
-
-      if (carrinhoMemoria.length === 0) {
-        corpo.innerHTML = `
-          <div class="carrinho-vazio">
-            <svg class="carrinho-vazio-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
-              <path d="M3 6h18"/>
-              <path d="M16 10a4 4 0 0 1-8 0"/>
-            </svg>
-            <p class="carrinho-vazio-msg">Seu carrinho está vazio no momento.</p>
-            <a href="#destaques" class="carrinho-btn-ver-pecas" onclick="fecharCarrinho()">
-              <span>Ver peças</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
-        `;
-        if (footer) footer.style.display = 'none';
-        return;
-      }
-
-      if (footer) footer.style.display = 'flex';
-
-      let itensHtml = '<ul class="carrinho-lista">';
-      carrinhoMemoria.forEach(item => {
-        const prod = obterProdutoPorId(item.id);
-        if (!prod) return;
-
-        itensHtml += `
-          <li class="carrinho-item">
-            <img src="${prod.imagem}" 
-                 alt="${prod.nome}" 
-                 class="carrinho-item-img" 
-                 loading="lazy">
-            <div class="carrinho-item-info">
-              <h3 class="carrinho-item-nome">${prod.nome}</h3>
-              <p class="carrinho-item-preco">${prod.preco}</p>
-              <div class="carrinho-item-acoes">
-                <div class="carrinho-item-qtd-wrap" role="group" aria-label="Quantidade para ${prod.nome}">
-                  <button type="button" 
-                          class="carrinho-btn-qtd" 
-                          onclick="alterarQuantidade('${item.id}', -1)" 
-                          aria-label="Diminuir quantidade de ${prod.nome}"
-                          ${item.qtd <= 1 ? 'disabled' : ''}>−</button>
-                  <span class="carrinho-qtd-num" aria-live="polite">${item.qtd}</span>
-                  <button type="button" 
-                          class="carrinho-btn-qtd" 
-                          onclick="alterarQuantidade('${item.id}', 1)" 
-                          aria-label="Aumentar quantidade de ${prod.nome}"
-                          ${item.qtd >= 20 ? 'disabled' : ''}>+</button>
-                </div>
-                <button type="button" 
-                        class="carrinho-btn-remover" 
-                        onclick="removerDoCarrinho('${item.id}')" 
-                        aria-label="Remover ${prod.nome} do carrinho">Remover</button>
-              </div>
-            </div>
-          </li>
-        `;
-      });
-      itensHtml += '</ul>';
-      corpo.innerHTML = itensHtml;
-    }
-
-    function abrirCarrinho() {
-      ultimoElementoFocado = document.activeElement;
-      const overlay = document.getElementById('carrinhoOverlay');
-      const gaveta = document.getElementById('carrinhoGaveta');
-      const btnFechar = document.getElementById('btnFecharCarrinho');
-      if (!overlay) return;
-
-      overlay.classList.add('carrinho-ativo');
-      overlay.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-
-      setTimeout(() => {
-        if (btnFechar) {
-          btnFechar.focus();
-        } else if (gaveta) {
-          gaveta.focus();
-        }
-      }, 50);
-    }
-
-    function fecharCarrinho() {
-      const overlay = document.getElementById('carrinhoOverlay');
-      if (!overlay) return;
-
-      overlay.classList.remove('carrinho-ativo');
-      overlay.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-
-      if (ultimoElementoFocado && typeof ultimoElementoFocado.focus === 'function') {
-        ultimoElementoFocado.focus();
-      }
-    }
-
-    function fecharCarrinhoSeBackdrop(event) {
-      if (event.target === document.getElementById('carrinhoOverlay')) {
-        fecharCarrinho();
-      }
-    }
-
-    function executarFinalizacaoCarrinho() {
-      finalizarPedido(carrinhoMemoria);
-    }
-
-    // UMA função única de fechamento do pedido
-    function finalizarPedido(itens) {
-      // Ponto de integração: checkout com cartão/provedor de pagamento será plugado aqui numa etapa futura.
-      if (!itens || itens.length === 0) return;
-      const numeroWhatsLimpo = CONFIG.whatsapp.replace(/\D/g, '');
-
-      let linhasItens = "";
-      let totalCentavos = 0;
-
-      itens.forEach(item => {
-        const prod = obterProdutoPorId(item.id);
-        if (!prod) return;
-        const precoUnitCentavos = precoParaCentavos(prod.preco);
-        totalCentavos += precoUnitCentavos * item.qtd;
-        linhasItens += `- ${item.qtd}x ${prod.nome} (${prod.preco})\n`;
-      });
-
-      const totalFormatado = centavosParaPreco(totalCentavos);
-
-      const msgTexto = `Olá! Quero fazer um pedido:\n${linhasItens}Total dos produtos: ${totalFormatado} (sem frete).\nMeu CEP para calcular o frete é: `;
-
-      const urlFinal = `https://wa.me/${numeroWhatsLimpo}?text=${encodeURIComponent(msgTexto)}`;
-      window.open(urlFinal, '_blank', 'noopener,noreferrer');
-    }
-
-    let carrinhoInicializado = false;
-    function inicializarCarrinho() {
-      if (carrinhoInicializado) return;
-      carrinhoInicializado = true;
-      carregarCarrinho();
-      atualizarInterfaceCarrinho();
-    }
-
     // Inicialização segura
     document.addEventListener('DOMContentLoaded', () => {
       renderizarProdutos();
       aplicarConfiguracoesGlobais();
       inicializarEventosModal();
       inicializarScrollTopo();
-      inicializarCarrinho();
     });
 
     if (document.readyState === 'interactive' || document.readyState === 'complete') {
@@ -3567,7 +2567,6 @@
       aplicarConfiguracoesGlobais();
       inicializarEventosModal();
       inicializarScrollTopo();
-      inicializarCarrinho();
     }
   </script>
 
