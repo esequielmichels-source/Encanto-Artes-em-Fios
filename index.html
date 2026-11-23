@@ -740,6 +740,10 @@
       transform: scale(1.05);
     }
 
+    .product-image-sold {
+      filter: grayscale(35%) brightness(0.92);
+    }
+
     /* ==========================================================================
        MODAL / LIGHTBOX DE VISUALIZAÇÃO AMPLIADA DA FOTO DO PRODUTO
        ========================================================================== */
@@ -845,6 +849,31 @@
       padding: 0.35rem 0.8rem;
       border-radius: var(--radius-pill);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .product-badge-sold {
+      position: absolute;
+      top: 38px;
+      right: -47px;
+      width: 200px;
+      height: 30px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(45deg);
+      background-color: #823B34;
+      color: #FFFFFF;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(45, 39, 36, 0.36);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+      pointer-events: none;
+      user-select: none;
     }
 
     .product-image-fallback {
@@ -1051,6 +1080,15 @@
 
     .product-shipping-note:hover {
       color: var(--earth-accent);
+    }
+
+    .product-order-note {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin: 0;
+      line-height: 1.35;
     }
 
 
@@ -2234,7 +2272,8 @@
         descricao: "Protetor Cobre-Alimentos + Panos de prato + Bate mão. Charme e sabor para sua cozinha com protetor cobre-alimentos em tela rendada e panos de prato decorativos com estampa de galinhas e barrado em renda.",
         tamanho: "Kit completo com 3 peças",
         preco: "R$ 119,90",
-        linkPagamento: "https://mpago.la/1deMkjA"
+        linkPagamento: "https://mpago.la/1deMkjA",
+        vendido: true
       },
 
       {
@@ -2244,7 +2283,8 @@
         descricao: "Adicione um toque autêntico, artesanal e cheio de personalidade ao seu visual. Feita inteiramente à mão através da milenar técnica de Macrame, esta bolsa saco une o estilo boêmio à delicadeza de nós perfeitamente estruturados e um acabamento impecável.",
         tamanho: "20 cm de largura x 22 cm de altura",
         preco: "R$ 169,90",
-        linkPagamento: "https://mpago.la/2DAn6hH"
+        linkPagamento: "https://mpago.la/2DAn6hH",
+        vendido: true
       },
 
        {
@@ -2271,15 +2311,36 @@
 
       grade.innerHTML = '';
 
-      PRODUTOS.forEach((produto, index) => {
+      const produtosOrdenados = [...PRODUTOS].sort((a, b) => Number(Boolean(a.vendido)) - Number(Boolean(b.vendido)));
+
+      produtosOrdenados.forEach((produto, index) => {
         const numeroWhatsLimpo = CONFIG.whatsapp.replace(/\D/g, '');
+        const estaVendido = Boolean(produto.vendido);
         const mensagemCompra = `Olá! Quero comprar a peça "${produto.nome}" (${produto.preco}). Meu CEP para calcular o frete é: `;
         const linkWhatsCompra = `https://wa.me/${numeroWhatsLimpo}?text=${encodeURIComponent(mensagemCompra)}`;
+        const mensagemEncomenda = `Olá! Vi o ${produto.nome} no site e gostaria de encomendar um igual. Pode me passar prazo e valor?`;
+        const linkWhatsEncomenda = `https://wa.me/${numeroWhatsLimpo}?text=${encodeURIComponent(mensagemEncomenda)}`;
 
-        const temLinkPagamento = produto.linkPagamento && produto.linkPagamento.trim().startsWith("https://");
+        const temLinkPagamento = !estaVendido && produto.linkPagamento && produto.linkPagamento.trim().startsWith("https://");
 
         let botoesHtml = "";
-        if (temLinkPagamento) {
+        let notaAbaixoBotaoHtml = "";
+
+        if (estaVendido) {
+          botoesHtml = `
+            <a href="${linkWhatsEncomenda}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-buy-whatsapp"
+               aria-label="Encomendar um igual a ${produto.nome} pelo WhatsApp (abre em nova aba)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
+              </svg>
+              <span>Encomendar um igual</span>
+            </a>
+          `;
+          notaAbaixoBotaoHtml = `<p class="product-order-note">Feito sob encomenda. Prazo a combinar.</p>`;
+        } else if (temLinkPagamento) {
           botoesHtml = `
             <a href="${produto.linkPagamento.trim()}" 
                target="_blank" 
@@ -2300,6 +2361,15 @@
               <span>Cartão ou Pix · Pagamento seguro pelo Mercado Pago</span>
             </div>
           `;
+          notaAbaixoBotaoHtml = `
+            <a href="${linkWhatsCompra}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="product-shipping-note"
+               aria-label="Tirar dúvidas sobre frete e prazo de ${produto.nome} pelo WhatsApp">
+              Frete e prazo combinados pelo WhatsApp
+            </a>
+          `;
         } else {
           botoesHtml = `
             <a href="${linkWhatsCompra}" 
@@ -2313,7 +2383,21 @@
               <span>Comprar pelo WhatsApp</span>
             </a>
           `;
+          notaAbaixoBotaoHtml = `
+            <a href="${linkWhatsCompra}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="product-shipping-note"
+               aria-label="Tirar dúvidas sobre frete e prazo de ${produto.nome} pelo WhatsApp">
+              Frete e prazo combinados pelo WhatsApp
+            </a>
+          `;
         }
+
+        const seloVendidoHtml = estaVendido
+          ? `<span class="product-badge-sold">VENDIDO</span>`
+          : '';
+        const classeImagemSold = estaVendido ? ' product-image-sold' : '';
 
         const card = document.createElement('article');
         card.className = 'product-card';
@@ -2321,9 +2405,10 @@
         card.innerHTML = `
           <div class="product-media-wrapper" id="media-${index}" onclick="abrirModalImagem('${produto.imagem}', '${produto.nome.replace(/'/g, "\\'")}')" title="Clique para ver a foto ampliada">
             <span class="product-badge-handmade">Feito à mão</span>
+            ${seloVendidoHtml}
             <img src="${produto.imagem}" 
                  alt="${produto.nome} - Feito à mão pela Encanto Artes em Fios" 
-                 class="product-image" 
+                 class="product-image${classeImagemSold}" 
                  loading="lazy" 
                  referrerpolicy="no-referrer" 
                  onerror="tratarErroImagem(this, '${produto.nome}')">
@@ -2350,13 +2435,7 @@
                 ${botoesHtml}
               </div>
 
-              <a href="${linkWhatsCompra}" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="product-shipping-note"
-                 aria-label="Tirar dúvidas sobre frete e prazo de ${produto.nome} pelo WhatsApp">
-                Frete e prazo combinados pelo WhatsApp
-              </a>
+              ${notaAbaixoBotaoHtml}
             </div>
           </div>
         `;
