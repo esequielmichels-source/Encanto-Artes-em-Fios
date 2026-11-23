@@ -909,6 +909,74 @@
       line-height: 1.35;
     }
 
+    .product-color-selector {
+      padding: 0.95rem 1.85rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .product-color-label {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .product-color-name {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .product-color-swatches {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .product-color-btn {
+      width: 40px;
+      height: 40px;
+      padding: 2px;
+      border-radius: var(--radius-pill);
+      border: 2px solid var(--sand-dark);
+      background-color: var(--bg-surface);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .product-color-btn:hover {
+      border-color: var(--rose-dark);
+      transform: translateY(-1px);
+    }
+
+    .product-color-btn:focus-visible {
+      outline: 2px solid var(--earth-accent);
+      outline-offset: 2px;
+    }
+
+    .product-color-btn.active {
+      border-color: var(--earth-accent);
+      box-shadow: 0 0 0 2px var(--rose-soft), 0 4px 10px rgba(142, 93, 82, 0.22);
+      transform: scale(1.06);
+    }
+
+    .product-color-thumb {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius-pill);
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-color-selector + .product-info {
+      padding-top: 0.95rem;
+    }
+
     .product-info {
       padding: 1.85rem;
       display: flex;
@@ -2234,32 +2302,19 @@
     // ============================================================
 
     const PRODUTOS = [
-        {
-        id: "Sandalia_Encanto",
-        imagem:"imagens/Sandalia_Encanto.jpg", 
-        nome: "Sandália Encanto",
-        descricao: "Criação artesanal com trabalho manual minucioso em macramê claro sobre solado escuro, oferecendo um visual leve, despojado e sofisticado para caminhar à beira-mar ou compor looks cheios de personalidade.",
-        tamanho: "Faça seu pedido conforme seu numero.",
-        preco: "R$ 112,45",
-        linkPagamento: "https://mpago.la/176Es1G"
-      },
       {
         id: "Sandalia_Encanto",
-        imagem:"imagens/Sandalia_Encanto1.jpg", 
+        imagem: "imagens/Sandalia_Encanto.jpg",
         nome: "Sandália Encanto",
         descricao: "Criação artesanal com trabalho manual minucioso em macramê claro sobre solado escuro, oferecendo um visual leve, despojado e sofisticado para caminhar à beira-mar ou compor looks cheios de personalidade.",
         tamanho: "Faça seu pedido conforme seu numero.",
         preco: "R$ 112,45",
-        linkPagamento: "https://mpago.la/176Es1G"
-      },
-       {
-        id: "Sandalia_Encanto",
-        imagem:"imagens/Sandalia_Encando2.jpg", 
-        nome: "Sandália Encanto",
-        descricao: "Criação artesanal com trabalho manual minucioso em macramê claro sobre solado escuro, oferecendo um visual leve, despojado e sofisticado para caminhar à beira-mar ou compor looks cheios de personalidade.",
-        tamanho: "Faça seu pedido conforme seu numero.",
-        preco: "R$ 112,45",
-        linkPagamento: "https://mpago.la/176Es1G"
+        linkPagamento: "https://mpago.la/176Es1G",
+        cores: [
+          { nome: "Bege com solado preto", imagem: "imagens/Sandalia_Encanto.jpg" },
+          { nome: "Branco com solado vinho", imagem: "imagens/Sandalia_Encanto1.jpg" },
+          { nome: "Verde com solado preto", imagem: "imagens/Sandalia_Encando2.jpg" }
+        ]
       },
       {
         id: "Sandalia_Nó_Encantado",
@@ -2403,6 +2458,66 @@
     // MOTOR DO SITE (NÃO PRECISA EDITAR ABAIXO DESTA LINHA)
     // ============================================================
 
+    function escaparAtributoHtml(valor) {
+      return String(valor || '')
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    function montarMensagemWhatsApp(tipo, nomeProduto, precoProduto, corNome) {
+      if (tipo === 'encomenda') {
+        const textoCor = corNome ? ` (cor: ${corNome})` : '';
+        return `Olá! Vi o ${nomeProduto}${textoCor} no site e gostaria de encomendar um igual. Pode me passar prazo e valor?`;
+      }
+      const textoCor = corNome ? ` na cor "${corNome}"` : '';
+      return `Olá! Quero comprar a peça "${nomeProduto}"${textoCor} (${precoProduto}). Meu CEP para calcular o frete é: `;
+    }
+
+    function selecionarCorProduto(botao) {
+      const card = botao.closest('.product-card');
+      if (!card) return;
+
+      const corNome = botao.dataset.corNome || '';
+      const corImagem = botao.dataset.corImagem || '';
+      const nomeProduto = card.dataset.produtoNome || '';
+      const precoProduto = card.dataset.produtoPreco || '';
+      const numeroWhats = card.dataset.whatsappNum || '';
+
+      const media = card.querySelector('.product-media-wrapper');
+      const img = card.querySelector('.product-image');
+      const altAtual = corNome ? `${nomeProduto} (${corNome})` : nomeProduto;
+
+      if (img && corImagem) {
+        img.src = corImagem;
+        img.alt = `${altAtual} - Feito à mão pela Encanto Artes em Fios`;
+      }
+
+      if (media && corImagem) {
+        media.dataset.imagemAtual = corImagem;
+        media.dataset.altAtual = altAtual;
+      }
+
+      card.querySelectorAll('.product-color-btn').forEach((btn) => {
+        const ativo = btn === botao;
+        btn.classList.toggle('active', ativo);
+        btn.setAttribute('aria-checked', ativo ? 'true' : 'false');
+      });
+
+      const nomeCorEl = card.querySelector('.product-color-name');
+      if (nomeCorEl) {
+        nomeCorEl.textContent = corNome;
+      }
+
+      card.querySelectorAll('[data-whatsapp-tipo]').forEach((link) => {
+        const tipo = link.dataset.whatsappTipo;
+        const msg = montarMensagemWhatsApp(tipo, nomeProduto, precoProduto, corNome);
+        link.href = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(msg)}`;
+      });
+    }
+
     // Renderiza os produtos automaticamente na grade
     function renderizarProdutos() {
       const grade = document.getElementById('gradeProdutos');
@@ -2415,9 +2530,16 @@
       produtosOrdenados.forEach((produto, index) => {
         const numeroWhatsLimpo = CONFIG.whatsapp.replace(/\D/g, '');
         const estaVendido = Boolean(produto.vendido);
-        const mensagemCompra = `Olá! Quero comprar a peça "${produto.nome}" (${produto.preco}). Meu CEP para calcular o frete é: `;
+        const temCores = Array.isArray(produto.cores) && produto.cores.length > 0;
+        const corInicial = temCores ? produto.cores[0] : null;
+        const nomeCorInicial = corInicial ? corInicial.nome : '';
+        const imagemInicial = corInicial ? corInicial.imagem : produto.imagem;
+
+        console.log(`[PRODUTO] ${produto.nome} | cores: ${temCores ? produto.cores.length : 0} | imagem: ${imagemInicial}`);
+
+        const mensagemCompra = montarMensagemWhatsApp('compra', produto.nome, produto.preco, nomeCorInicial);
         const linkWhatsCompra = `https://wa.me/${numeroWhatsLimpo}?text=${encodeURIComponent(mensagemCompra)}`;
-        const mensagemEncomenda = `Olá! Vi o ${produto.nome} no site e gostaria de encomendar um igual. Pode me passar prazo e valor?`;
+        const mensagemEncomenda = montarMensagemWhatsApp('encomenda', produto.nome, produto.preco, nomeCorInicial);
         const linkWhatsEncomenda = `https://wa.me/${numeroWhatsLimpo}?text=${encodeURIComponent(mensagemEncomenda)}`;
 
         const temLinkPagamento = !estaVendido && produto.linkPagamento && produto.linkPagamento.trim().startsWith("https://");
@@ -2431,7 +2553,8 @@
                target="_blank" 
                rel="noopener noreferrer" 
                class="btn-buy-whatsapp"
-               aria-label="Encomendar um igual a ${produto.nome} pelo WhatsApp (abre em nova aba)">
+               data-whatsapp-tipo="encomenda"
+               aria-label="Encomendar um igual a ${escaparAtributoHtml(produto.nome)} pelo WhatsApp (abre em nova aba)">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
               </svg>
@@ -2445,7 +2568,7 @@
                target="_blank" 
                rel="noopener noreferrer" 
                class="btn-buy-paylink"
-               aria-label="Comprar agora ${produto.nome} (abre em nova aba)">
+               aria-label="Comprar agora ${escaparAtributoHtml(produto.nome)} (abre em nova aba)">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="5" width="20" height="14" rx="2"/>
                 <line x1="2" y1="10" x2="22" y2="10"/>
@@ -2465,7 +2588,8 @@
                target="_blank" 
                rel="noopener noreferrer" 
                class="product-shipping-note"
-               aria-label="Tirar dúvidas sobre frete e prazo de ${produto.nome} pelo WhatsApp">
+               data-whatsapp-tipo="compra"
+               aria-label="Tirar dúvidas sobre frete e prazo de ${escaparAtributoHtml(produto.nome)} pelo WhatsApp">
               Frete e prazo combinados pelo WhatsApp
             </a>
           `;
@@ -2475,7 +2599,8 @@
                target="_blank" 
                rel="noopener noreferrer" 
                class="btn-buy-whatsapp"
-               aria-label="Comprar ${produto.nome} pelo WhatsApp (abre em nova aba)">
+               data-whatsapp-tipo="compra"
+               aria-label="Comprar ${escaparAtributoHtml(produto.nome)} pelo WhatsApp (abre em nova aba)">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.32a8.04 8.04 0 0 1-1.23-4.26c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2 1.03 5.73 2.57a8.06 8.06 0 0 1 2.37 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.09c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.17.24-.64.79-.79.95-.14.16-.29.18-.54.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.23.24-.86.84-.86 2.06 0 1.21.88 2.39 1 2.55.13.16 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
               </svg>
@@ -2487,7 +2612,8 @@
                target="_blank" 
                rel="noopener noreferrer" 
                class="product-shipping-note"
-               aria-label="Tirar dúvidas sobre frete e prazo de ${produto.nome} pelo WhatsApp">
+               data-whatsapp-tipo="compra"
+               aria-label="Tirar dúvidas sobre frete e prazo de ${escaparAtributoHtml(produto.nome)} pelo WhatsApp">
               Frete e prazo combinados pelo WhatsApp
             </a>
           `;
@@ -2497,21 +2623,56 @@
           ? `<span class="product-badge-sold">VENDIDO</span>`
           : '';
         const classeImagemSold = estaVendido ? ' product-image-sold' : '';
+        const altImagemInicial = nomeCorInicial ? `${produto.nome} (${nomeCorInicial})` : produto.nome;
+
+        const seletorCoresHtml = temCores ? `
+          <div class="product-color-selector" role="radiogroup" aria-label="Cores disponíveis para ${escaparAtributoHtml(produto.nome)}">
+            <span class="product-color-label">Cor: <strong class="product-color-name">${escaparAtributoHtml(nomeCorInicial)}</strong></span>
+            <div class="product-color-swatches">
+              ${produto.cores.map((cor, corIndex) => `
+                <button type="button"
+                        class="product-color-btn${corIndex === 0 ? ' active' : ''}"
+                        role="radio"
+                        aria-checked="${corIndex === 0 ? 'true' : 'false'}"
+                        aria-label="Selecionar cor ${escaparAtributoHtml(cor.nome)}"
+                        title="${escaparAtributoHtml(cor.nome)}"
+                        data-cor-nome="${escaparAtributoHtml(cor.nome)}"
+                        data-cor-imagem="${escaparAtributoHtml(cor.imagem)}"
+                        onclick="selecionarCorProduto(this)">
+                  <img src="${escaparAtributoHtml(cor.imagem)}"
+                       alt="${escaparAtributoHtml(cor.nome)}"
+                       class="product-color-thumb"
+                       loading="lazy">
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        ` : '';
 
         const card = document.createElement('article');
         card.className = 'product-card';
+        card.dataset.produtoNome = produto.nome;
+        card.dataset.produtoPreco = produto.preco;
+        card.dataset.whatsappNum = numeroWhatsLimpo;
 
         card.innerHTML = `
-          <div class="product-media-wrapper" id="media-${index}" onclick="abrirModalImagem('${produto.imagem}', '${produto.nome.replace(/'/g, "\\'")}')" title="Clique para ver a foto ampliada">
+          <div class="product-media-wrapper"
+               id="media-${index}"
+               data-imagem-atual="${escaparAtributoHtml(imagemInicial)}"
+               data-alt-atual="${escaparAtributoHtml(altImagemInicial)}"
+               onclick="abrirModalImagem(this.dataset.imagemAtual, this.dataset.altAtual)"
+               title="Clique para ver a foto ampliada">
             <span class="product-badge-handmade">Feito à mão</span>
             ${seloVendidoHtml}
-            <img src="${produto.imagem}" 
-                 alt="${produto.nome} - Feito à mão pela Encanto Artes em Fios" 
+            <img src="${escaparAtributoHtml(imagemInicial)}" 
+                 alt="${escaparAtributoHtml(altImagemInicial)} - Feito à mão pela Encanto Artes em Fios" 
                  class="product-image${classeImagemSold}" 
                  loading="lazy" 
                  referrerpolicy="no-referrer" 
-                 onerror="tratarErroImagem(this, '${produto.nome}')">
+                 onerror="tratarErroImagem(this, '${escaparAtributoHtml(produto.nome)}')">
           </div>
+
+          ${seletorCoresHtml}
 
           <div class="product-info">
             <h3 class="product-title">${produto.nome}</h3>
